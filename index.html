@@ -848,7 +848,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
               </div>
               <div class="draft">
                 <label for="d-draft">Follow-up draft</label>
-                <textarea id="d-draft" rows="4" readonly>Hi Jordan, it was great discussing the imaging internship. Here is the portfolio I mentioned.</textarea>
+                <textarea id="d-draft" rows="4" readonly>Hi Quang, it was great discussing the imaging internship. Here is the portfolio I mentioned.</textarea>
               </div>
               <p class="app-note" id="app-note">Review before sending</p>
             </div>
@@ -878,7 +878,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       <article class="cmp">
         <span class="cmp-tag">The note-taker</span>
         <div class="notepad" aria-hidden="true">
-          <p>Jordan <s>Leigh</s> Lee? North<s>ern</s>star</p>
+          <p>Quang <s>Leigh</s> Lee? North<s>ern</s>star</p>
           <p>imaging intern... ask about the ???</p>
           <p>send something by fri??</p>
         </div>
@@ -1052,7 +1052,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
           <div class="mode-visual">
             <span class="recap-quote">
               <span class="mic"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></span>
-              <q>Jordan, Northstar Labs, imaging internship. Send portfolio Friday.</q>
+              <q>Quang, Northstar Labs, imaging internship. Send portfolio Friday.</q>
             </span>
           </div>
           <p class="best">Best for quick booth stops, or anywhere live capture isn't appropriate.</p>
@@ -1317,7 +1317,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span>Network&amp;Recall</span></a>
       <p class="foot-tag">Your event, remembered.</p>
     </div>
-    <p class="foot-note">An ECE 6001 intrapreneurship concept from the <span class="gt">Georgia Tech School of Electrical and Computer Engineering</span>. Designed for Meta AI glasses; not affiliated with or endorsed by Meta. &copy; <span id="year">2026</span></p>
+    <p class="foot-note">An ECE 6001 intrapreneurship project from the <span class="gt">Georgia Tech School of Electrical and Computer Engineering</span>. Designed for Meta AI glasses; not affiliated with or endorsed by Meta. &copy; <span id="year">2026</span></p>
   </div>
 </footer>
 
@@ -1390,35 +1390,27 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   const events = [
     { id: "fall-fair", name: "Fall Career Fair", day: "15", mon: "Oct", place: "Exhibit Hall B", when: "Today", status: "today", contacts: [
       { initials: "QN", name: "Quang Nguyen", title: "Research Scientist", org: "Voila Lab", met: "Booth 14, 2:40 PM",
-        discussed: "Imaging internship and my research", next: "Send portfolio by Friday",
-        draft: "Hi Jordan, it was great discussing the imaging internship. Here is the portfolio I mentioned. I'd love to hear whether the summer team could use someone with my background.",
-        lookup: { suit: "#2E3F5F", facts: ["Computational imaging and MRI", "PhD in Electrical Engineering", "Hiring summer imaging interns"], common: "In common: inverse problems" } },
-      { initials: "AR", name: "Ananya Rohatgi", title: "Firmware Engineer", org: "NVIDIA", met: "Poster session, 3:15 PM",
-        discussed: "Their poster on 3D scene coding", next: "Share my paper by Friday",
-        draft: "Hi Alex, I really enjoyed your poster on 3D scene coding. As promised, here's my paper. Would you be open to a quick call about a possible research collaboration?",
+        discussed: "Their poster on implicit neural representation", next: "Share my paper by Friday",
+        draft: "Hi Quang, I really enjoyed your poster on implicit neural representation. As promised, here's my paper. Would you be open to a quick call about a possible research collaboration?",
         lookup: { suit: "#24575A", facts: ["3D perception for warehouse robots", "Poster today on 3D scene coding", "MS in Robotics"], common: "In common: neural scene representations" } },
+      { initials: "AR", name: "Ananya Rohatgi", title: "Firmware Engineer", org: "NVIDIA", met: "Poster session, 3:15 PM",
+        discussed: "Hardware internship", next: "Send resume by Friday",
+        draft: "Hi Ananya, it was great discussing the hardware internship. Here is the resume I mentioned. I'd love to hear whether the summer team could use someone with my background.",
+        lookup: { suit: "#2E3F5F", facts: ["Computational imaging and MRI", "PhD in Electrical Engineering", "Hiring summer imaging interns"], common: "In common: inverse problems" } },
       { initials: "PG", name: "Pragya Gupta", title: "University Recruiter", org: "AMD", met: "Booth 31, 4:05 PM",
         discussed: "Summer PhD internships and referrals", next: "Apply this week and mention Sam",
-        draft: "Hi Sam, thanks for walking me through Meridian's summer PhD internships. I'm submitting my application this week. May I mention our conversation in it?",
+        draft: "Hi Pragya, thanks for walking me through AMD's summer PhD internships. I'm submitting my application this week. May I mention our conversation in it?",
         lookup: { suit: "#5A2E45", facts: ["Recruits for summer PhD internships", "Imaging and ML teams are hiring", "8 years in technical recruiting"], common: "In common: 2 mutual connections" } },
     ] },
     { id: "expo", name: "Graduate Research Expo", day: "12", mon: "Nov", place: "Student Center", status: "upcoming", contacts: [] },
     { id: "workshop", name: "Imaging and Vision Workshop", day: "3", mon: "Dec", place: "Engineering Hall", status: "upcoming", contacts: [] },
-    { id: "robotics", name: "Robotics Industry Night", day: "18", mon: "Sep", place: "Innovation Lab", when: "Sep 18", status: "past", contacts: [
-      { initials: "PN", name: "Priya Nair", title: "Perception Lead", org: "Vantage Autonomy", met: "Table 6, 7:10 PM",
-        discussed: "Research internships in 3D perception", next: "Email my resume to Priya",
-        draft: "Hi Priya, thanks for telling me about the 3D perception internships at Vantage Autonomy. I've attached my resume and would love to be considered for next summer." },
-      { initials: "MB", name: "Marcus Bell", title: "Founder", org: "Gridline Robotics", met: "Demo area, 7:45 PM",
-        discussed: "Neural fields for robot mapping", next: "Send my demo video link",
-        draft: "Hi Marcus, I enjoyed our chat about using neural fields for mapping. Here's the demo video I mentioned. Happy to walk through it if it's useful for Gridline." },
-    ] },
     { id: "symposium", name: "Fall Research Symposium", day: "4", mon: "Sep", place: "Main Auditorium", when: "Sep 4", status: "past", contacts: [
-      { initials: "EO", name: "Elena Ortiz", title: "Associate Professor", org: "Westbrook University", met: "Poster 12, 2:00 PM",
-        discussed: "Collaborating on MRI reconstruction", next: "Share our code repository",
-        draft: "Hi Professor Ortiz, thank you for stopping by my poster. Here is the code repository we discussed. I'd be glad to set up a call about collaborating on MRI reconstruction." },
-      { initials: "KH", name: "Kevin Huang", title: "PhD Student", org: "Westbrook University", met: "Coffee break, 3:30 PM",
-        discussed: "Compression for 3D scenes", next: "Swap paper drafts next week",
-        draft: "Hi Kevin, great talking about compression for 3D scenes. I'll send my draft next week as planned. Looking forward to reading yours too." },
+      { initials: "XC", name: "Xichen Zhang", title: "Masters' Student", org: "Georgia Institute of Technology", met: "Poster 12, 2:00 PM",
+        discussed: "Collaborating on biomedical imaging research ", next: "Share our code repository",
+        draft: "Hi PXichen, thank you for stopping by my poster. Here is the code repository we discussed. I'd be glad to set up a call about collaborating on biomedical imaging research." },
+      { initials: "SH", name: "Srijith Hariharan", title: "Masters' Student", org: "Georgia Institute of Technology", met: "Coffee break, 3:30 PM",
+        discussed: "VLSI exam", next: "Review exam notes and share my slides",
+        draft: "Hi Srijith, great talking about the VLSI exam. I'll send notes and slides soon. Looking forward to reading yours too." },
     ] },
   ];
   const CHEV = '<svg class="i chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>';
@@ -1673,7 +1665,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     track("lookup_person", { person: people[Number(b.dataset.person)].name });
   }));
 
-  /* Page-load moment: the glasses read Jordan's badge, then the phone opens Jordan's card. */
+  /* Page-load moment: the glasses read Quang's badge, then the phone opens Quang's card. */
   const cancelAuto = () => clearTimeout(autoOpen);
   phone.addEventListener("pointerdown", cancelAuto, { once: true });
   phone.addEventListener("focusin", cancelAuto, { once: true });
