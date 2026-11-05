@@ -120,41 +120,45 @@ legend{padding:0}
 .led{fill:#fff;filter:drop-shadow(0 0 3px #fff) drop-shadow(0 0 6px rgba(255,255,255,.8));transition:fill .2s}
 .glasses.recall-off .led{fill:#3A4864;filter:none}
 
-/* Heads-up display in the right lens */
-.hud{position:absolute;left:58.75%;top:21.1%;width:32.5%;height:58.9%;border-radius:3.75cqw;padding:1.05em 1.15em;display:flex;flex-direction:column;gap:.7em;overflow:hidden;
-  background:rgba(10,16,30,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);color:#F3F6FB;
-  font-family:var(--font-body);font-size:clamp(8px,1.45cqw,12.5px);line-height:1.35}
-.hud-top{display:flex;justify-content:space-between;align-items:center;font-size:.82em;font-weight:600;color:#AEB9CC}
-.hud-live{display:inline-flex;align-items:center;gap:.45em}
-.hud-live i{width:.6em;height:.6em;border-radius:50%;background:var(--gold);box-shadow:0 0 0 .2em rgba(245,176,49,.25)}
-.hud[data-state="paused"] .hud-live i{background:#6B7A93;box-shadow:none}
 .lens-view{position:relative}
-.hud-pane{display:none;flex-direction:column;gap:.6em;min-height:0}
-.hud[data-state="idle"] .p-idle,.hud[data-state="scan"] .p-scan,.hud[data-state="lookup"] .p-scan,.hud[data-state="profile"] .p-profile,.hud[data-state="paused"] .p-paused{display:flex}
-.hud-msg{color:#C9D3E2}
-.hud-msg b{color:#fff}
-.scan-row{display:flex;align-items:center;gap:.6em;font-weight:600}
-.spinner{flex:none;width:1.1em;height:1.1em;border-radius:50%;border:.18em solid rgba(255,255,255,.22);border-top-color:var(--gold);animation:spin .8s linear infinite}
-.sk-wrap{display:none;flex-direction:column;gap:.55em;margin-top:.3em}
-.hud[data-state="lookup"] .sk-wrap{display:flex}
-.sk{height:.7em;border-radius:.35em;background:linear-gradient(90deg,rgba(255,255,255,.08),rgba(255,255,255,.24),rgba(255,255,255,.08));background-size:200% 100%;animation:shimmer 1.2s linear infinite}
-.hud-person{display:flex;align-items:center;gap:.65em}
-.hud-av{flex:none;width:2.5em;height:2.5em;border-radius:50%;background:var(--gold);color:#0F1A2E;display:grid;place-items:center;font-weight:700;font-size:.95em}
-.hud-person b{display:block;font-size:1.22em;line-height:1.2;color:#fff}
-.hud-person div span{display:block;font-size:.86em;color:#C9D3E2}
-.hud-facts{list-style:none;margin:0;padding:0;display:grid;gap:.35em}
-.hud-facts li{display:flex;gap:.55em;align-items:flex-start}
-.hud-facts li::before{content:"";flex:none;width:.42em;height:.42em;border-radius:50%;background:var(--gold);margin-top:.5em}
-.hud-common{align-self:flex-start;background:rgba(245,176,49,.2);color:#FFD27A;border-radius:.6em;padding:.25em .75em;font-weight:600;font-size:.88em}
-.hud[data-state="profile"] .p-profile > *{animation:hudIn .35s ease both}
-.hud[data-state="profile"] .p-profile > :nth-child(2){animation-delay:.1s}
-.hud[data-state="profile"] .p-profile > :nth-child(3){animation-delay:.2s}
-.hud-mini{display:none;position:absolute;left:61%;top:44%;align-items:center;gap:.45em;padding:.35em .75em .35em .35em;border-radius:999px;background:rgba(10,16,30,.85);color:#fff;font-size:clamp(9px,2.6cqw,12px);font-weight:600;white-space:nowrap}
-.hud-mini i{width:1.7em;height:1.7em;border-radius:50%;background:var(--gold);color:#0F1A2E;display:grid;place-items:center;font-style:normal;font-size:.8em;font-weight:700}
-@container glass (max-width:560px){
-  .hud{position:relative;left:auto;top:auto;width:auto;height:auto;min-height:150px;margin-top:14px;border-radius:18px;font-size:14px;background:#0F1A2E}
-  .hud-mini{display:flex}
-}
+.gsvg{overflow:visible}
+.gw{opacity:0}
+.glasses[data-state="speaking"] .gw{animation:wavePulse 1.4s ease-out infinite}
+.glasses[data-state="speaking"] .gw:nth-of-type(2){animation-delay:.2s}
+.glasses[data-state="speaking"] .gw:nth-of-type(3){animation-delay:.4s}
+.spk{transition:opacity .2s}
+.glasses:not([data-state="speaking"]) .spk{opacity:.55}
+
+/* Spoken brief: what the wearer hears, shown as a live caption under the glasses */
+.earcard{position:relative;margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px 18px 18px;box-shadow:var(--shadow)}
+.earcard::before{content:"";position:absolute;top:-9px;right:2.6%;width:16px;height:16px;background:var(--surface);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.ec-head{display:flex;align-items:center;gap:12px}
+.ec-ic{position:relative;flex:none;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center}
+.ec-ic .i{width:21px;height:21px}
+.ec-ic::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--gold);opacity:0}
+.earcard[data-state="speaking"] .ec-ic::after{animation:ring 1.4s ease-out infinite}
+.earcard[data-state="paused"] .ec-ic{background:var(--tile);color:var(--muted)}
+.ec-title{flex:1;min-width:0;line-height:1.3}
+.ec-title b{display:block;font-size:15.5px}
+.ec-title span{display:block;font-size:13.5px;color:var(--muted)}
+.ec-play{flex:none;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 15px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;cursor:pointer;transition:background .15s}
+.ec-play:hover{background:var(--tile)}
+.ec-play.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.ec-play[disabled]{opacity:.45;cursor:not-allowed}
+.ec-play .i{width:18px;height:18px}
+.ec-wave{display:flex;align-items:center;gap:3px;height:30px;margin:14px 0 10px}
+.ec-wave b{flex:1;min-width:2px;height:100%;border-radius:3px;background:var(--line);transform:scaleY(.12);transition:transform .3s,background .3s}
+.earcard[data-state="speaking"] .ec-wave b{background:var(--gold);animation:talk .9s ease-in-out infinite;animation-delay:var(--d)}
+.earcard[data-state="done"] .ec-wave b{background:var(--gold);opacity:.45;transform:scaleY(calc(var(--h) * .55))}
+.ec-text{margin:0;min-height:3.1em;font-size:clamp(16px,1.45vw,18px);line-height:1.55;color:var(--ink)}
+.ec-text:empty::before{content:"The brief appears here as it plays.";color:var(--muted)}
+.ec-text .w{color:var(--muted);opacity:.5;border-radius:4px;transition:color .15s,opacity .15s,background .15s}
+.ec-text .w.said,.earcard[data-state="done"] .ec-text .w{color:var(--ink);opacity:1}
+.ec-text .w.now{background:var(--cream);box-shadow:0 0 0 3px var(--cream)}
+.ec-sk{display:none;flex-direction:column;gap:10px;padding:6px 0 4px}
+.ec-sk span{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--tile),var(--line),var(--tile));background-size:200% 100%;animation:shimmer 1.2s linear infinite}
+.earcard[data-state="lookup"] .ec-sk{display:flex}
+.earcard[data-state="lookup"] .ec-text{display:none}
 
 /* Captions under each device */
 .device-cap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;margin-top:18px}
@@ -355,18 +359,18 @@ legend{padding:0}
 .bar-track span{display:block;height:100%;width:16%;background:var(--gold)}
 
 /* How it works (mirrors the figure) */
-.steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
-.track{position:absolute;top:28px;left:calc((100% - 64px)/6);right:calc((100% - 64px)/6);height:5px;border-radius:5px;background:var(--line)}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.track{position:absolute;top:28px;left:calc((100% - 96px)/8);right:calc((100% - 96px)/8);height:5px;border-radius:5px;background:var(--line)}
 .track-fill{height:100%;width:0;border-radius:5px;background:var(--gold);transition:width .5s ease}
 .step{display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer}
 .num{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;border:0;background:var(--gold);color:var(--gold-ink);font-family:var(--font-head);font-weight:800;font-size:26px;display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 10px var(--bg);transition:transform .2s}
 .step.is-active .num{transform:scale(1.08)}
-.step h3{font-size:clamp(26px,2.6vw,32px);font-weight:800;margin:20px 0 20px}
+.step h3{font-size:clamp(24px,2.3vw,30px);font-weight:800;margin:20px 0 20px}
 .illo{width:100%;aspect-ratio:4/3;background:var(--tile);border-radius:30px;display:grid;place-items:center;padding:8%;transition:box-shadow .25s}
 .step.is-active .illo{box-shadow:0 0 0 3px var(--gold)}
 .ill{width:100%;height:100%}
 .step .desc{margin-top:24px;color:var(--ink-2);max-width:30ch}
-.tagline{margin-top:18px;font-family:var(--font-head);font-weight:700;font-size:18px;padding-bottom:12px;position:relative}
+.tagline{margin-top:18px;font-family:var(--font-head);font-weight:700;font-size:17px;padding-bottom:12px;position:relative}
 .tagline::after{content:"";position:absolute;left:50%;bottom:0;width:64px;height:4px;border-radius:4px;background:var(--gold);transform:translateX(-50%)}
 .hint{margin-top:36px;text-align:center;font-size:14px;color:var(--muted)}
 /* svg paint */
@@ -383,6 +387,10 @@ legend{padding:0}
 .step.is-active .bar:nth-child(2n){animation-delay:-.35s}
 .step.is-active .bar:nth-child(3n){animation-delay:-.6s}
 .step.is-active .fly{animation:fly 1.6s ease-in infinite}
+.ew{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round;opacity:.25}
+.step.is-active .ew{animation:wavePulse 1.5s ease-out infinite}
+.step.is-active .ew:nth-of-type(2){animation-delay:.25s}
+.step.is-active .ew:nth-of-type(3){animation-delay:.5s}
 
 /* Privacy */
 .privacy-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,4vw,56px);align-items:start}
@@ -535,6 +543,9 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes shimmer{to{background-position:-200% 0}}
 @keyframes hudIn{from{opacity:0;transform:translateY(.4em)}to{opacity:1;transform:none}}
+@keyframes wavePulse{0%{opacity:.12}35%{opacity:1}100%{opacity:.12}}
+@keyframes ring{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+@keyframes talk{0%,100%{transform:scaleY(.15)}50%{transform:scaleY(var(--h))}}
 @keyframes fly{0%{transform:translate(0,0);opacity:0}25%{opacity:1}100%{transform:translate(32px,-4px);opacity:0}}
 
 /* Responsive */
@@ -572,6 +583,11 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 @media (max-width:520px){
   .device-cap{flex-direction:column;align-items:flex-start}
   .billing button{padding:0 14px}
+}
+@media (min-width:861px) and (max-width:1100px){
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 32px;max-width:780px;margin-inline:auto}
+  .track{display:none}
+  .num{box-shadow:none}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -626,7 +642,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       <h1>Meet everyone.<br>Forget nothing.</h1>
     </div>
     <div class="hero-side">
-      <p class="lede">Network&amp;Recall is a networking assistant for Meta AI glasses. Glance at a name badge to see who you're talking to. Talk naturally, then find a summary and a follow-up draft on your phone.</p>
+      <p class="lede">Network&amp;Recall is a networking assistant for Meta AI glasses. Glance at a name badge and hear who you're talking to. Talk naturally, then find a summary and a follow-up draft on your phone.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#signup" data-intent="waitlist" data-track="hero_cta">Join the waitlist</a>
         <!-- <a class="btn btn-ghost" href="#demo" data-track="hero_watch">
@@ -646,7 +662,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     <figure class="glass-stage">
       <div class="glasses" id="glasses" data-state="idle">
         <div class="lens-view">
-        <svg class="gsvg" viewBox="0 0 800 360" role="img" aria-label="View through Meta AI glasses at a career fair: a person wearing a name badge, with a profile brief shown in the right lens">
+        <svg class="gsvg" viewBox="0 0 800 360" role="img" aria-label="View through Meta AI glasses at a career fair: a person wearing a name badge, with a short spoken brief playing through the speaker in the right temple">
           <defs>
             <clipPath id="lens-clip"><rect x="52" y="40" width="316" height="280" rx="80"/><rect x="432" y="40" width="316" height="280" rx="80"/></clipPath>
             <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9EEF5"/><stop offset="1" stop-color="#CAD4E1"/></linearGradient>
@@ -694,29 +710,27 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
           <rect class="frame-solid" x="752" y="72" width="44" height="20" rx="6"/>
           <circle cx="72" cy="56" r="5" fill="#3A4864"/>
           <circle class="led" cx="728" cy="56" r="4.5"/>
+          <circle class="spk" cx="786" cy="82" r="3.5" fill="#F5B031"/>
+          <g fill="none" stroke="#F5B031" stroke-width="3.5" stroke-linecap="round">
+            <path class="gw" d="M770 100a8 8 0 0 0 16 0"/>
+            <path class="gw" d="M763 100a15 15 0 0 0 30 0"/>
+            <path class="gw" d="M756 100a22 22 0 0 0 44 0"/>
+          </g>
         </svg>
-        <div class="hud-mini" id="hud-mini" aria-hidden="true"><i id="mini-av">QN</i><span id="mini-name">Quang Nguyen</span></div>
-        </div>
-        <div class="hud" id="hud" data-state="idle" aria-live="polite">
-          <div class="hud-top"><span class="hud-live"><i></i>Live lookup</span><span>Public info</span></div>
-          <div class="hud-pane p-idle"><p class="hud-msg">Look at a name badge to see who you're talking to.</p></div>
-          <div class="hud-pane p-scan">
-            <div class="scan-row"><span class="spinner"></span><span id="hud-scan-text">Reading badge</span></div>
-            <div class="sk-wrap"><span class="sk" style="width:80%"></span><span class="sk" style="width:95%"></span><span class="sk" style="width:65%"></span></div>
-          </div>
-          <div class="hud-pane p-profile">
-            <div class="hud-person"><span class="hud-av" id="hud-av">QN</span><div><b id="hud-name">Quang Nguyen</b><span id="hud-role">Research Scientist, Northstar Labs</span></div></div>
-            <ul class="hud-facts" id="hud-facts"></ul>
-            <span class="hud-common" id="hud-common"></span>
-          </div>
-          <div class="hud-pane p-paused">
-            <p class="hud-msg"><b id="paused-name">Quang Nguyen</b>, <span id="paused-org">Northstar Labs</span></p>
-            <p class="hud-msg">Badge saved. Live lookup is off, so no profile is shown.</p>
-          </div>
         </div>
       </div>
+      <div class="earcard" id="earcard" data-state="idle">
+        <div class="ec-head">
+          <span class="ec-ic"><svg class="i" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
+          <div class="ec-title"><b>In your ear</b><span id="ec-status">Look at a name badge to hear who it is.</span></div>
+          <button class="ec-play" id="ec-play" type="button" title="Play the brief out loud on this device"><svg class="i" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg><span id="ec-play-label">Hear it</span></button>
+        </div>
+        <div class="ec-wave" id="ec-wave" aria-hidden="true"></div>
+        <div class="ec-sk" aria-hidden="true"><span style="width:92%"></span><span style="width:68%"></span></div>
+        <p class="ec-text" id="ec-text" aria-live="polite"></p>
+      </div>
       <figcaption class="device-cap">
-        <span class="cap-title"><span class="rdot"></span>In your lens: Live lookup</span>
+        <span class="cap-title"><span class="rdot"></span>In your ear: Live lookup</span>
         <div class="look-at" role="group" aria-label="Choose who to look at">
           <span>Look at</span>
           <button type="button" aria-pressed="true" data-person="0">Quang</button>
@@ -794,11 +808,11 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
                 </div>
                 <p class="group-head">Features</p>
                 <ul class="group">
-                  <li class="set-row"><span class="row-text"><span class="c-name">Live lookup</span><span class="c-org">A brief on each badge you look at</span></span><button class="switch" type="button" role="switch" aria-checked="true" id="sw-lookup" aria-label="Live lookup"></button></li>
+                  <li class="set-row"><span class="row-text"><span class="c-name">Live lookup</span><span class="c-org">Hear a brief on each badge you look at</span></span><button class="switch" type="button" role="switch" aria-checked="true" id="sw-lookup" aria-label="Live lookup"></button></li>
                   <li class="set-row"><span class="row-text"><span class="c-name">Live recall</span><span class="c-org">Summarize conversations as you talk</span></span><button class="switch" type="button" role="switch" aria-checked="true" id="sw-recall" aria-label="Live recall"></button></li>
                   <li class="set-row"><span class="row-text"><span class="c-name">Capture light</span><span class="c-org">Visible while Recall listens</span></span><span class="set-val">Always on</span></li>
                 </ul>
-                <p class="foot-sm">Live lookup uses public professional info only and shows it only in your lens. Nothing is saved unless you keep the contact.</p>
+                <p class="foot-sm">Live lookup uses public professional info only and plays it quietly through your glasses' speakers. Nothing is saved unless you keep the contact.</p>
               </div>
             </div>
 
@@ -935,14 +949,14 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   <div class="wrap">
     <div class="head center">
       <h2>From handshake to follow-up</h2>
-      <p>Three steps and zero scribbling, at career fairs, conferences, poster sessions, and trade shows.</p>
+      <p>Four steps and zero scribbling, at career fairs, conferences, poster sessions, and trade shows.</p>
     </div>
     <div class="steps">
       <div class="track" aria-hidden="true"><div class="track-fill" id="track-fill"></div></div>
 
       <article class="step is-active">
-        <button class="num" type="button" aria-pressed="true" aria-label="Show step 1, Meet">1</button>
-        <h3>Meet</h3>
+        <button class="num" type="button" aria-pressed="true" aria-label="Show step 1, Glance">1</button>
+        <h3>Glance</h3>
         <div class="illo">
           <svg class="ill" viewBox="0 0 240 180" aria-hidden="true">
             <g class="st-ink" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
@@ -959,12 +973,49 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
             <rect class="scan" x="80" y="129" width="80" height="3" rx="1.5"/>
           </svg>
         </div>
-        <p class="desc">Look at a name badge. The glasses read the name and show their role and research in your lens.</p>
+        <p class="desc">Look at a name badge. The glasses read the name, title, and organization.</p>
         <p class="tagline">No facial recognition.</p>
       </article>
 
       <article class="step">
-        <button class="num" type="button" aria-pressed="false" aria-label="Show step 2, Recall">2</button>
+        <button class="num" type="button" aria-pressed="false" aria-label="Show step 2, Hear">2</button>
+        <h3>Hear</h3>
+        <div class="illo">
+          <svg class="ill" viewBox="0 0 240 180" aria-hidden="true">
+            <g class="st-ink" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <rect class="f-lens" x="34" y="24" width="58" height="44" rx="17"/>
+              <rect class="f-lens" x="112" y="24" width="58" height="44" rx="17"/>
+              <path d="M92 42c6-6 14-6 20 0"/>
+              <path d="M34 34l-14-4"/>
+              <path d="M170 34l20-5"/>
+            </g>
+            <circle class="f-gold" cx="190" cy="29" r="5"/>
+            <path class="ew" d="M200 21a10 10 0 0 1 0 16"/>
+            <path class="ew" d="M206 15a17 17 0 0 1 0 28"/>
+            <path class="ew" d="M212 9a24 24 0 0 1 0 40"/>
+            <path class="f-paper st-ink" stroke-width="3.5" stroke-linejoin="round" d="M42 92H162L184 70L180 92H198a12 12 0 0 1 12 12V154a12 12 0 0 1-12 12H42a12 12 0 0 1-12-12V104a12 12 0 0 1 12-12Z"/>
+            <circle class="f-gold" cx="54" cy="115" r="11"/>
+            <path d="M48.5 112h3l4-3.5v13l-4-3.5h-3z" fill="#0F1A2E"/>
+            <rect class="f-ink" x="74" y="108" width="80" height="6.5" rx="3.25"/>
+            <rect class="f-muted" x="74" y="120" width="112" height="5" rx="2.5"/>
+            <rect class="f-muted" x="74" y="130" width="92" height="5" rx="2.5"/>
+            <g class="bars-gold">
+              <rect class="bar" x="44" y="145" width="5" height="10" rx="2.5"/><rect class="bar" x="55" y="141" width="5" height="18" rx="2.5"/>
+              <rect class="bar" x="66" y="146" width="5" height="8" rx="2.5"/><rect class="bar" x="77" y="140" width="5" height="20" rx="2.5"/>
+              <rect class="bar" x="88" y="144" width="5" height="12" rx="2.5"/><rect class="bar" x="99" y="141" width="5" height="18" rx="2.5"/>
+              <rect class="bar" x="110" y="146" width="5" height="8" rx="2.5"/><rect class="bar" x="121" y="142" width="5" height="16" rx="2.5"/>
+              <rect class="bar" x="132" y="145" width="5" height="10" rx="2.5"/><rect class="bar" x="143" y="140" width="5" height="20" rx="2.5"/>
+              <rect class="bar" x="154" y="144" width="5" height="12" rx="2.5"/><rect class="bar" x="165" y="146" width="5" height="8" rx="2.5"/>
+              <rect class="bar" x="176" y="142" width="5" height="16" rx="2.5"/><rect class="bar" x="187" y="145" width="5" height="10" rx="2.5"/>
+            </g>
+          </svg>
+        </div>
+        <p class="desc">A quick brief on who they are plays quietly through the open-ear speakers.</p>
+        <p class="tagline">No display needed.</p>
+      </article>
+
+      <article class="step">
+        <button class="num" type="button" aria-pressed="false" aria-label="Show step 3, Recall">3</button>
         <h3>Recall</h3>
         <div class="illo">
           <svg class="ill" viewBox="0 0 240 180" aria-hidden="true">
@@ -996,7 +1047,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       </article>
 
       <article class="step">
-        <button class="num" type="button" aria-pressed="false" aria-label="Show step 3, Follow up">3</button>
+        <button class="num" type="button" aria-pressed="false" aria-label="Show step 4, Follow up">4</button>
         <h3>Follow up</h3>
         <div class="illo">
           <svg class="ill" viewBox="0 0 240 180" aria-hidden="true">
@@ -1070,7 +1121,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         <li>
           <span class="p-ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M15 10h3M15 14h3M6 16c.6-1.4 1.7-2 3-2s2.4.6 3 2"/></svg></span>
           <h3>Badges, not faces</h3>
-          <p>Live lookup starts from the name on a badge you look at, never from a face, and shows only public professional info.</p>
+          <p>Live lookup starts from the name on a badge you look at, never from a face, and speaks only public professional info.</p>
         </li>
         <li>
           <span class="p-ic"><svg class="i" viewBox="0 0 24 24"><path d="M2 10v4M6 7v10M10 4v16M14 8v8M18 6v12M22 10v4"/><path d="M3 3l18 18"/></svg></span>
@@ -1143,7 +1194,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         <div class="pc-price"><s class="pc-was" data-was="student"></s><span class="pc-amt" data-amt="student"></span><span class="pc-unit" data-unit="student"></span></div>
         <p class="pc-note" data-note="student"></p>
         <ul class="pc-feats">
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Live lookup on name badges</li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Spoken briefs on name badges</li>
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Unlimited events and contacts</li>
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Conversation summaries and follow-up drafts</li>
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Spreadsheet export</li>
@@ -1278,15 +1329,15 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     <div class="faq">
       <details>
         <summary>Which glasses does it work with?<svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <p>Network&amp;Recall is being designed for Meta AI glasses, with a companion phone app for reviewing contacts and drafts. When you join, tell us whether you own a pair. It helps us decide what to support first.</p>
+        <p>Network&amp;Recall is being designed for Meta AI glasses, with a companion phone app for reviewing contacts and drafts. Because Live lookup speaks to you through the open-ear speakers instead of a display, it works on Meta AI glasses with or without a screen. When you join, tell us whether you own a pair. It helps us decide what to support first.</p>
       </details>
       <details>
         <summary>Does it record the people I talk to?<svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
         <p>In Live recall, the conversation is turned into a short text summary and the audio is discarded. No voice recordings and no face data are stored. If you'd rather not capture live at all, use Quick recap and dictate a few sentences after you walk away.</p>
       </details>
       <details>
-        <summary>What does Live lookup show, and where does it come from?<svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <p>When you look at a name badge, the glasses read the name and organization, then show a short brief: current role, research or work areas, and recent public work. It draws only on public professional sources like company pages and publication listings, appears only in your lens, and isn't saved unless you keep the contact. It never uses faces, you can turn it off anytime, and anyone can opt out of appearing in lookups.</p>
+        <summary>What does Live lookup tell me, and where does it come from?<svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>When you look at a name badge, the glasses read the name and organization, then quietly speak a short brief through the open-ear speakers: current role, research or work areas, and recent public work. It draws only on public professional sources like company pages and publication listings, plays at a low volume meant for you, and isn't saved unless you keep the contact. It never uses faces, you can turn it off anytime, and anyone can opt out of appearing in lookups.</p>
       </details>
       <details>
         <summary>Is it okay to capture conversations at events?<svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -1394,15 +1445,18 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       { initials: "QN", name: "Quang Nguyen", title: "PhD Student", org: "Voila Lab", met: "Booth 14, 2:40 PM",
         discussed: "Their poster on implicit neural representation", next: "Share my paper by Friday",
         draft: "Hi Quang, I really enjoyed your poster on implicit neural representation. As promised, here's my paper. Would you be open to a quick call about a possible research collaboration?",
-        lookup: { suit: "#24575A", facts: ["implicit neural representation", "Poster today on INR", "MS in ECE"], common: "In common: neural scene representations" } },
+        lookup: { suit: "#24575A", facts: ["implicit neural representation", "Poster today on INR", "MS in ECE"], common: "In common: neural scene representations",
+          say: "Quang Nguyen, PhD student at Voila Lab. Works on implicit neural representations and is presenting a poster on them today. You both work on neural scene representations." } },
       { initials: "AR", name: "Ananya Rohatgi", title: "Firmware Engineer", org: "NVIDIA", met: "Poster session, 3:15 PM",
         discussed: "Firmware internship", next: "Send resume by Friday",
         draft: "Hi Ananya, it was great discussing the firmware internship. Here is the resume I mentioned. I'd love to hear whether the summer team could use someone with my background.",
-        lookup: { suit: "#2E3F5F", facts: ["Firmware", "MS in ECE", "Hiring summer firmware interns"], common: "In common: Georgia Tech" } },
+        lookup: { suit: "#2E3F5F", facts: ["Firmware", "MS in ECE", "Hiring summer firmware interns"], common: "In common: Georgia Tech",
+          say: "Ananya Rohatgi, firmware engineer at NVIDIA. Has an MS in ECE, and the team is hiring summer firmware interns. You share a Georgia Tech connection." } },
       { initials: "PG", name: "Mike Ross", title: "University Recruiter", org: "AMD", met: "Booth 31, 4:05 PM",
         discussed: "Summer PhD internships and referrals", next: "Apply this week and mention Mike",
         draft: "Hi Mike, thanks for walking me through AMD's summer PhD internships. I'm submitting my application this week. May I mention our conversation in it?",
-        lookup: { suit: "#5A2E45", facts: ["Recruits for summer PhD internships", "Imaging and ML teams are hiring", "8 years in technical recruiting"], common: "In common: 2 mutual connections" } },
+        lookup: { suit: "#5A2E45", facts: ["Recruits for summer PhD internships", "Imaging and ML teams are hiring", "8 years in technical recruiting"], common: "In common: 2 mutual connections",
+          say: "Mike Ross, university recruiter at AMD. Recruits for summer PhD internships, and the imaging and ML teams are hiring. You have 2 mutual connections." } },
     ] },
     { id: "expo", name: "Graduate Research Expo", day: "12", mon: "Nov", place: "Student Center", status: "upcoming", contacts: [] },
     { id: "workshop", name: "Imaging and Vision Workshop", day: "3", mon: "Dec", place: "Engineering Hall", status: "upcoming", contacts: [] },
@@ -1613,19 +1667,74 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   renderEvents();
   renderContacts();
 
-  /* ---------- Glasses view: Live lookup ---------- */
-  const glasses = $("glasses"), hud = $("hud");
+  /* ---------- Glasses view: Live lookup, spoken in your ear ---------- */
+  const glasses = $("glasses"), ear = $("earcard"), earText = $("ec-text"), earStatus = $("ec-status");
+  const playBtn = $("ec-play"), playLabel = $("ec-play-label");
   const people = events[0].contacts;
   const lookBtns = [...document.querySelectorAll("[data-person]")];
-  let person = 0, scanId = 0, scanStarted = false;
+  const canSpeak = "speechSynthesis" in window && typeof window.SpeechSynthesisUtterance === "function";
+  let person = 0, scanId = 0, scanStarted = false, wordTimer = null, voiceOn = false;
 
-  function showPaused(p) {
-    $("paused-name").textContent = p.name;
-    $("paused-org").textContent = p.org;
-    hud.dataset.state = "paused";
-    glasses.dataset.state = "done";
+  // Waveform bars for the caption card
+  $("ec-wave").innerHTML = Array.from({ length: 72 }, (_, k) =>
+    `<b style="--d:${(-((k * 0.137) % 0.9)).toFixed(2)}s;--h:${(0.3 + 0.7 * Math.abs(Math.sin(k * 1.7))).toFixed(2)}"></b>`).join("");
+  if (!canSpeak) playBtn.hidden = true;
+
+  // The brief the wearer hears. Uses `say` when written, otherwise builds one from the lookup facts.
+  function briefFor(p) {
+    if (p.lookup && p.lookup.say) return p.lookup.say;
+    const facts = p.lookup ? p.lookup.facts.join(". ") + "." : "";
+    const common = p.lookup && p.lookup.common ? " " + p.lookup.common + "." : "";
+    return `${p.name}, ${p.title} at ${p.org}. ${facts}${common}`;
   }
+  function setEar(state, status) {
+    ear.dataset.state = state;
+    glasses.dataset.state = state;
+    earStatus.textContent = status;
+  }
+  function renderWords(text) {
+    earText.innerHTML = text.split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(" ");
+    return [...earText.querySelectorAll(".w")];
+  }
+  function highlightTo(words, n) {
+    words.forEach((w, k) => { w.classList.toggle("said", k < n); w.classList.toggle("now", k === n - 1); });
+  }
+  function finish(id) {
+    if (id !== scanId) return;
+    earText.querySelectorAll(".now").forEach((w) => w.classList.remove("now"));
+    setEar("done", canSpeak ? "Brief finished. Select Hear it to listen out loud." : "Brief finished.");
+  }
+  // Highlights the caption word by word. With autoFinish off, the real voice decides when it ends.
+  function playWords(words, id, msPerWord, autoFinish = true) {
+    clearInterval(wordTimer);
+    if (reduce) { highlightTo(words, words.length); if (autoFinish) finish(id); return; }
+    let n = 0;
+    wordTimer = setInterval(() => {
+      if (id !== scanId) { clearInterval(wordTimer); return; }
+      highlightTo(words, ++n);
+      if (n >= words.length) {
+        clearInterval(wordTimer);
+        if (autoFinish) setTimeout(() => finish(id), 500);
+      }
+    }, msPerWord);
+  }
+  function stopVoice() {
+    if (canSpeak && voiceOn) window.speechSynthesis.cancel();
+    voiceOn = false;
+    playBtn.classList.remove("on");
+    playLabel.textContent = "Hear it";
+  }
+  function showPaused(p) {
+    clearInterval(wordTimer);
+    stopVoice();
+    earText.innerHTML = `<b>${p.name}</b>, ${p.org}. Badge saved. Live lookup is off, so nothing is spoken.`;
+    setEar("paused", "Live lookup is off");
+    playBtn.disabled = true;
+  }
+
   function runScan(i) {
+    stopVoice();
+    clearInterval(wordTimer);
     scanStarted = true;
     person = i;
     const id = ++scanId, p = people[i];
@@ -1634,30 +1743,62 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     $("badge-org").textContent = p.org;
     $("booth-name").textContent = p.org;
     $("suit").setAttribute("fill", p.lookup.suit);
-    $("mini-av").textContent = p.initials;
-    $("mini-name").textContent = p.name;
-    glasses.dataset.state = "scan";
-    hud.dataset.state = "scan";
-    $("hud-scan-text").textContent = "Reading badge";
+    earText.innerHTML = "";
+    playBtn.disabled = !lookupOn;
+    setEar("scan", "Reading the badge");
     const step = (ms, fn) => setTimeout(() => { if (id === scanId) fn(); }, reduce ? 0 : ms);
     step(900, () => {
       if (!lookupOn) { showPaused(p); return; }
-      $("hud-scan-text").textContent = `Looking up ${p.name}`;
-      hud.dataset.state = "lookup";
+      setEar("lookup", `Looking up ${p.name}`);
     });
     step(1800, () => {
       if (!lookupOn) return;
-      $("hud-av").textContent = p.initials;
-      $("hud-name").textContent = p.name;
-      $("hud-role").textContent = `${p.title}, ${p.org}`;
-      $("hud-facts").innerHTML = p.lookup.facts.map((f) => `<li>${f}</li>`).join("");
-      $("hud-common").textContent = p.lookup.common;
-      hud.dataset.state = "profile";
-      glasses.dataset.state = "done";
+      const words = renderWords(briefFor(p));
+      setEar("speaking", "Playing quietly through the open-ear speakers");
+      playWords(words, id, 230);
     });
   }
+
+  // "Hear it" reads the brief aloud with the browser's built-in voice, so visitors can hear the experience.
+  playBtn.addEventListener("click", () => {
+    if (voiceOn) { stopVoice(); finish(scanId); track("lookup_voice_stop"); return; }
+    if (!canSpeak || !lookupOn) return;
+    const p = people[person], text = briefFor(p);
+    const id = ++scanId;
+    const words = renderWords(text);
+    const starts = [];
+    text.replace(/\S+/g, (m, off) => { starts.push(off); return m; });
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 1.05;
+    let synced = false;
+    u.onboundary = (e) => {
+      if (id !== scanId || (e.name && e.name !== "word")) return;
+      if (!synced) { synced = true; clearInterval(wordTimer); }
+      let n = 0;
+      while (n < starts.length && starts[n] <= e.charIndex) n++;
+      highlightTo(words, n);
+    };
+    u.onend = u.onerror = () => {
+      if (id !== scanId) return;
+      voiceOn = false;
+      playBtn.classList.remove("on");
+      playLabel.textContent = "Hear it";
+      highlightTo(words, words.length);
+      finish(id);
+    };
+    window.speechSynthesis.cancel();
+    voiceOn = true;
+    playBtn.classList.add("on");
+    playLabel.textContent = "Stop";
+    setEar("speaking", "Playing out loud on this device");
+    window.speechSynthesis.speak(u);
+    playWords(words, id, 330, false); // paces the caption until the voice reports word timings
+    track("lookup_voice_play", { person: p.name });
+  });
+
   function setLookup(on) {
     lookupOn = on;
+    playBtn.disabled = !on;
     if (!scanStarted) return;
     if (!on) { scanId++; showPaused(people[person]); }
     else runScan(person);
