@@ -7,12 +7,12 @@
 <meta name="description" content="Network&amp;Recall is a networking assistant for Meta AI glasses. It captures who you met, what you discussed, and drafts the follow-up while you stay in the conversation.">
 <meta property="og:title" content="Network&amp;Recall: your event, remembered">
 <meta property="og:description" content="Meet everyone. Forget nothing. A networking assistant for Meta AI glasses.">
-<meta name="theme-color" content="#F5F7FA" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B111D" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23F5B031'/%3E%3Crect x='17' y='6.5' width='6' height='6.5' rx='1.5' fill='%230F1A2E'/%3E%3Crect x='12' y='11' width='16' height='21' rx='3.2' fill='%230F1A2E'/%3E%3Ccircle cx='20' cy='18.2' r='3' fill='%23F5B031'/%3E%3Cpath d='M15.4 26.6c0-2.6 2-4.3 4.6-4.3s4.6 1.7 4.6 4.3z' fill='%23F5B031'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#F2F4F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230F6E56'/%3E%3Crect x='17' y='6.5' width='6' height='6.5' rx='1.5' fill='%23FFFFFF'/%3E%3Crect x='12' y='11' width='16' height='21' rx='3.2' fill='%23FFFFFF'/%3E%3Ccircle cx='20' cy='18.2' r='3' fill='%230F6E56'/%3E%3Cpath d='M15.4 26.6c0-2.6 2-4.3 4.6-4.3s4.6 1.7 4.6 4.3z' fill='%230F6E56'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Caveat:wght@500&display=swap">
 <script>document.documentElement.classList.add("js");</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MM0N95L6C"></script>
 <script>
@@ -24,23 +24,26 @@
 <style>
 :root{
   color-scheme: light;
-  --bg:#F5F7FA; --bg-alt:#ECF0F5; --surface:#FFFFFF; --surface-2:#F8FAFC; --tile:#E6ECF3;
-  --ink:#0F1A2E; --ink-2:#33415C; --muted:#5B6B82; --line:#DCE3EC;
-  --gold:#F5B031; --gold-strong:#E9A11C; --gold-ink:#0F1A2E; --gold-text:#8A5D00;
-  --cream:#FEF2D6; --cream-2:#FFF9EC; --lens:#D6E6F5; --navy:#1E3A5F;
-  --stage:#0F1A2E; --gt-text:#7D6D33; --frame:#111A2C; --danger:#B42318;
-  --shadow:0 1px 2px rgba(15,26,46,.06), 0 18px 44px rgba(15,26,46,.10);
-  --font-head:"Poppins","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  /* Pine & mist: calm, discreet, trustworthy. Pine marks actions; mint marks anything "live". */
+  --bg:#F2F4F1; --bg-alt:#E8EDE9; --surface:#FFFFFF; --surface-2:#F8FAF8; --tile:#E4EAE6;
+  --ink:#11201B; --ink-2:#34433D; --muted:#5F6E68; --line:#D6DED9;
+  --gold:#0F6E56; --gold-strong:#0B5A46; --gold-ink:#FFFFFF; --gold-text:#0F6E56;
+  --cream:#DDF0E6; --cream-2:#EEF7F2; --lens:#D7E3E6; --navy:#1D3A33;
+  --live:#1FB57E; --safe:#0F6E56; --safe-tint:#E2F2EA; --safe-line:#BFE2D1; --safe-text:#0B5A46;
+  --stage:#10241E; --gt-text:#7D6D33; --frame:#17201D; --danger:#B42318;
+  --shadow:0 1px 2px rgba(17,32,27,.06), 0 18px 44px rgba(17,32,27,.10);
+  --font-head:"Bricolage Grotesque","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root{
     color-scheme: dark;
-    --bg:#0B111D; --bg-alt:#0F1726; --surface:#141D2E; --surface-2:#18233A; --tile:#1D2940;
-    --ink:#EEF2F8; --ink-2:#C6D0DF; --muted:#94A3B8; --line:#27344C;
-    --gold-strong:#FFC24D; --gold-text:#F5B031;
-    --cream:rgba(245,176,49,.15); --cream-2:rgba(245,176,49,.06); --lens:#2B4062; --navy:#2B4A75;
-    --stage:#070C16; --gt-text:#CDBE85; --frame:#2A3854; --danger:#FF8A80;
+    --bg:#0D1512; --bg-alt:#111C18; --surface:#15211D; --surface-2:#192722; --tile:#1E2D28;
+    --ink:#E9F0EC; --ink-2:#C3D0CA; --muted:#8FA19A; --line:#263832;
+    --gold:#1A7D61; --gold-strong:#23946F; --gold-text:#5FD4A8;
+    --cream:rgba(46,196,138,.16); --cream-2:rgba(46,196,138,.07); --lens:#2B3B44; --navy:#2E4A42;
+    --live:#3DDB9B; --safe:#1A7D61; --safe-tint:rgba(46,196,138,.12); --safe-line:rgba(46,196,138,.28); --safe-text:#7EE2B8;
+    --stage:#08100D; --gt-text:#CDBE85; --frame:#2A3A35; --danger:#FF8A80;
     --shadow:0 1px 2px rgba(0,0,0,.35), 0 18px 44px rgba(0,0,0,.45);
   }
 }
@@ -52,7 +55,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body)
 img,svg,video,iframe{max-width:100%;display:block}
 a{color:inherit}
 button,input,select,textarea{font:inherit;color:inherit}
-h1,h2,h3{font-family:var(--font-head);line-height:1.12;letter-spacing:-.02em;margin:0;font-weight:700}
+h1,h2,h3{font-family:var(--font-head);line-height:1.1;letter-spacing:-.02em;margin:0;font-weight:700;font-optical-sizing:auto}
 p{margin:0}
 fieldset{border:0;padding:0;margin:0;min-width:0}
 legend{padding:0}
@@ -103,11 +106,11 @@ legend{padding:0}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin:30px 0 0;padding:0;list-style:none;font-size:14.5px;color:var(--muted);font-weight:500}
 .trust li{display:flex;align-items:center;gap:8px}
-.trust .i{width:18px;height:18px;color:var(--gold-text);stroke-width:2.5}
+.trust .i{width:18px;height:18px;color:var(--safe);stroke-width:2.6}
 
 /* ---------- Device stage: glasses view + phone ---------- */
 .stage{position:relative;z-index:0;display:grid;grid-template-columns:minmax(0,1fr) 92px 320px;align-items:center;margin-top:72px}
-.stage::before{content:"";position:absolute;inset:8% -2% -4% 30%;background:radial-gradient(closest-side,rgba(245,176,49,.24),transparent);filter:blur(16px);z-index:-1}
+.stage::before{content:"";position:absolute;inset:8% -2% -4% 30%;background:radial-gradient(closest-side,rgba(31,181,126,.24),transparent);filter:blur(16px);z-index:-1}
 .glass-stage{margin:0;min-width:0;container:glass / inline-size}
 .glasses{position:relative}
 .gsvg{display:block;width:100%;height:auto}
@@ -118,7 +121,7 @@ legend{padding:0}
 .reticle-line{opacity:0}
 .glasses[data-state="scan"] .reticle-line{animation:retscan .9s ease-in-out infinite}
 .led{fill:#fff;filter:drop-shadow(0 0 3px #fff) drop-shadow(0 0 6px rgba(255,255,255,.8));transition:fill .2s}
-.glasses.recall-off .led{fill:#3A4864;filter:none}
+.glasses.recall-off .led{fill:#3B4943;filter:none}
 
 .lens-view{position:relative}
 .gsvg{overflow:visible}
@@ -146,10 +149,10 @@ legend{padding:0}
 .ec-play.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .ec-play[disabled]{opacity:.45;cursor:not-allowed}
 .ec-play .i{width:18px;height:18px}
-.ec-wave{display:flex;align-items:center;gap:3px;height:30px;margin:14px 0 10px}
+.ec-wave{display:flex;align-items:center;gap:3px;height:30px;margin:14px 0 10px;overflow:hidden}
 .ec-wave b{flex:1;min-width:2px;height:100%;border-radius:3px;background:var(--line);transform:scaleY(.12);transition:transform .3s,background .3s}
-.earcard[data-state="speaking"] .ec-wave b{background:var(--gold);animation:talk .9s ease-in-out infinite;animation-delay:var(--d)}
-.earcard[data-state="done"] .ec-wave b{background:var(--gold);opacity:.45;transform:scaleY(calc(var(--h) * .55))}
+.earcard[data-state="speaking"] .ec-wave b{background:var(--live);animation:talk .9s ease-in-out infinite;animation-delay:var(--d)}
+.earcard[data-state="done"] .ec-wave b{background:var(--live);opacity:.45;transform:scaleY(calc(var(--h) * .55))}
 .ec-text{margin:0;min-height:3.1em;font-size:clamp(16px,1.45vw,18px);line-height:1.55;color:var(--ink)}
 .ec-text:empty::before{content:"The brief appears here as it plays.";color:var(--muted)}
 .ec-text .w{color:var(--muted);opacity:.5;border-radius:4px;transition:color .15s,opacity .15s,background .15s}
@@ -175,7 +178,7 @@ legend{padding:0}
 .phone-col .cap-title{margin-top:20px}
 .cap-hint{font-size:13.5px;color:var(--muted);text-align:center;margin-top:4px}
 
-.rdot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(245,176,49,.6);animation:ping 1.8s infinite}
+.rdot{width:10px;height:10px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 rgba(31,181,126,.6);animation:ping 1.8s infinite}
 .eq{display:flex;gap:3px;align-items:center;height:22px}
 .eq b{display:block;width:4px;height:100%;border-radius:3px;background:var(--gold);transform-origin:center;animation:eq 1.1s ease-in-out infinite}
 .eq b:nth-child(2){animation-delay:-.2s}.eq b:nth-child(3){animation-delay:-.45s}.eq b:nth-child(4){animation-delay:-.7s}.eq b:nth-child(5){animation-delay:-.9s}.eq b:nth-child(6){animation-delay:-.3s}.eq b:nth-child(7){animation-delay:-.6s}
@@ -185,15 +188,15 @@ legend{padding:0}
 
 /* ---------- iPhone app preview ---------- */
 .phone{--ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;--ease:cubic-bezier(.32,.72,0,1);
-  position:relative;z-index:1;width:100%;aspect-ratio:9/19.5;border-radius:56px;padding:11px;background:#111A2C;font-family:var(--ui);
-  box-shadow:inset 0 0 0 1.5px #3A4864,inset 0 0 0 5px #0B1220,0 0 0 1px rgba(15,26,46,.2),0 50px 80px -30px rgba(15,26,46,.55),0 24px 40px -24px rgba(15,26,46,.45)}
-.phone::before,.phone::after{content:"";position:absolute;width:4px;background:#1B2539}
-.phone::before{left:-3px;top:150px;height:124px;border-radius:3px 0 0 3px;background:linear-gradient(#1B2539 0 44%,transparent 44% 56%,#1B2539 56%)}
+  position:relative;z-index:1;width:100%;aspect-ratio:9/19.5;border-radius:56px;padding:11px;background:#17201D;font-family:var(--ui);
+  box-shadow:inset 0 0 0 1.5px #3B4943,inset 0 0 0 5px #0B110F,0 0 0 1px rgba(17,32,27,.2),0 50px 80px -30px rgba(17,32,27,.55),0 24px 40px -24px rgba(17,32,27,.45)}
+.phone::before,.phone::after{content:"";position:absolute;width:4px;background:#1E2925}
+.phone::before{left:-3px;top:150px;height:124px;border-radius:3px 0 0 3px;background:linear-gradient(#1E2925 0 44%,transparent 44% 56%,#1E2925 56%)}
 .phone::after{right:-3px;top:200px;height:92px;border-radius:0 3px 3px 0}
 .screen{position:relative;height:100%;border-radius:45px;overflow:hidden;background:var(--bg-alt);color:var(--ink);isolation:isolate}
 
 /* Dynamic Island, used as a Live Activity for Recall */
-.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);z-index:10;width:34%;height:32px;border-radius:999px;background:#000;color:var(--gold);
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);z-index:10;width:34%;height:32px;border-radius:999px;background:#000;color:#3DDB9B;
   display:flex;align-items:center;justify-content:space-between;padding:0 11px 0 12px;transition:width .45s var(--ease),height .45s var(--ease)}
 .island .gl{width:19px;height:19px;transition:opacity .15s}
 .island .eq{height:12px;gap:2px;transition:opacity .15s}
@@ -211,7 +214,7 @@ legend{padding:0}
 
 /* Navigation stack: list pushes to detail like a UINavigationController */
 .view{position:absolute;inset:0;display:flex;flex-direction:column;padding-top:52px;background:var(--bg-alt);transition:transform .5s var(--ease)}
-.view-detail{z-index:2;transform:translateX(100%);box-shadow:-12px 0 32px rgba(15,26,46,.14)}
+.view-detail{z-index:2;transform:translateX(100%);box-shadow:-12px 0 32px rgba(17,32,27,.14)}
 .phone.is-detail .view-detail{transform:none}
 .phone.is-detail .view-root{transform:translateX(-26%)}
 .view-root::after{content:"";position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
@@ -269,7 +272,7 @@ legend{padding:0}
 .draft label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}
 .draft textarea{display:block;width:100%;min-height:126px;resize:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:11px;padding:9px 11px;font-family:var(--ui);font-size:14px;line-height:1.45}
 .draft textarea:focus{outline:none}
-.draft textarea:not([readonly]){border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,176,49,.3)}
+.draft textarea:not([readonly]){border-color:var(--gold);box-shadow:0 0 0 3px rgba(31,181,126,.3)}
 .app-note{text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
 .toolbar{flex:none;display:flex;gap:10px;align-items:center;padding:10px 16px 28px;border-top:1px solid var(--line);background:var(--surface)}
 .toolbar .btn{flex:1;height:44px;padding:0 12px;gap:8px;border-radius:12px;font-family:var(--ui);font-size:15px}
@@ -328,11 +331,11 @@ legend{padding:0}
 .cmp li .i{margin-top:3px;width:18px;height:18px;stroke-width:2.5}
 .cmp li .x{color:var(--muted)}
 .cmp li .ok{color:var(--gold-text)}
-.notepad{min-height:138px;border-radius:14px;border:1px solid var(--line);padding:4px 18px 8px 48px;transform:rotate(-1.2deg);box-shadow:0 6px 16px rgba(15,26,46,.07);
+.notepad{min-height:138px;border-radius:14px;border:1px solid var(--line);padding:4px 18px 8px 48px;transform:rotate(-1.2deg);box-shadow:0 6px 16px rgba(17,32,27,.07);
   background:linear-gradient(90deg,transparent 34px,rgba(229,72,77,.35) 34px 35px,transparent 35px),repeating-linear-gradient(var(--surface) 0 31px,var(--line) 31px 32px);
   font-family:"Caveat","Segoe Print","Bradley Hand","Marker Felt",cursive;font-size:21px;line-height:32px;color:var(--ink-2)}
 .notepad s{opacity:.55}
-.mini-card{min-height:138px;border-radius:16px;background:var(--surface);border:1px solid var(--line);padding:18px;box-shadow:0 6px 16px rgba(15,26,46,.07)}
+.mini-card{min-height:138px;border-radius:16px;background:var(--surface);border:1px solid var(--line);padding:18px;box-shadow:0 6px 16px rgba(17,32,27,.07)}
 .mini-top{display:flex;gap:12px;align-items:center}
 .mini-top .avatar{background:var(--gold);color:var(--gold-ink)}
 .mini-top b{display:block;font-size:16px}
@@ -344,17 +347,17 @@ legend{padding:0}
 /* Demo video */
 .video-frame{position:relative;aspect-ratio:16/9;border-radius:28px;overflow:hidden;background:var(--stage);box-shadow:var(--shadow)}
 .video-frame iframe,.video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
-.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,3vw,30px);color:#EEF2F8;
-  background:radial-gradient(55% 65% at 50% 46%,rgba(245,176,49,.20),transparent 70%),radial-gradient(circle at 1px 1px,rgba(255,255,255,.07) 1px,transparent 0) 0 0/22px 22px,var(--stage)}
-.ph-top{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:#B9C4D6}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,3vw,30px);color:#ECF2EF;
+  background:radial-gradient(55% 65% at 50% 46%,rgba(31,181,126,.20),transparent 70%),radial-gradient(circle at 1px 1px,rgba(255,255,255,.07) 1px,transparent 0) 0 0/22px 22px,var(--stage)}
+.ph-top{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:#B8C7C0}
 .rec{display:inline-flex;align-items:center;gap:8px}
 .rec i{width:9px;height:9px;border-radius:50%;background:#F0605D;animation:blink 1.4s steps(2,start) infinite}
 .ph-center{display:grid;justify-items:center;text-align:center;gap:10px}
-.play-ring{width:clamp(64px,9vw,92px);height:clamp(64px,9vw,92px);border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center;margin-bottom:12px;box-shadow:0 0 0 12px rgba(245,176,49,.16),0 0 0 26px rgba(245,176,49,.07)}
+.play-ring{width:clamp(64px,9vw,92px);height:clamp(64px,9vw,92px);border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center;margin-bottom:12px;box-shadow:0 0 0 12px rgba(31,181,126,.16),0 0 0 26px rgba(31,181,126,.07)}
 .play-ring svg{width:38%;height:38%;margin-left:6%}
 .ph-center h3{font-size:clamp(22px,2.8vw,32px);color:#fff}
-.ph-center p{color:#B9C4D6;max-width:44ch;font-size:clamp(14px,1.4vw,17px);margin-bottom:10px}
-.ph-bottom{display:flex;align-items:center;gap:14px;font-size:12px;color:#8C99AE;font-variant-numeric:tabular-nums}
+.ph-center p{color:#B8C7C0;max-width:44ch;font-size:clamp(14px,1.4vw,17px);margin-bottom:10px}
+.ph-bottom{display:flex;align-items:center;gap:14px;font-size:12px;color:#93A49C;font-variant-numeric:tabular-nums}
 .bar-track{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.14);overflow:hidden}
 .bar-track span{display:block;height:100%;width:16%;background:var(--gold)}
 
@@ -400,7 +403,7 @@ legend{padding:0}
 .seg{display:grid;grid-template-columns:1fr 1fr;background:var(--tile);border-radius:14px;padding:5px;gap:4px}
 .seg button{border:0;background:transparent;border-radius:10px;padding:10px 8px;font-weight:600;font-size:15px;cursor:pointer;color:var(--muted);display:flex;flex-direction:column;align-items:center;line-height:1.25}
 .seg button small{font-weight:500;font-size:12px}
-.seg button[aria-selected="true"],.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(15,26,46,.14)}
+.seg button[aria-selected="true"],.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(17,32,27,.14)}
 .mode-panel{margin-top:18px}
 .mode-visual{background:var(--tile);border-radius:16px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:86px;margin-bottom:16px}
 .indicator{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px}
@@ -428,6 +431,86 @@ legend{padding:0}
 .who blockquote span{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:2px}
 .center-cta{display:flex;justify-content:center;margin-top:52px}
 
+
+/* Privacy promise in the hero */
+.hero-privacy{display:flex;gap:14px;align-items:flex-start;margin-top:26px;padding:16px 18px;border-radius:18px;background:var(--safe-tint);border:1px solid var(--safe-line);max-width:560px}
+.hp-ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--safe);color:#fff;display:grid;place-items:center}
+.hp-ic .i{width:21px;height:21px}
+.hero-privacy b{display:block;font-family:var(--font-head);font-size:17px;color:var(--safe-text);margin-bottom:6px}
+.hero-side .hero-privacy .trust{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;color:var(--ink-2)}
+
+/* Privacy promise band */
+.promise{background:var(--stage);color:#E7EFEB;padding:clamp(64px,8vw,104px) 0}
+.promise-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:44px 64px;align-items:start}
+.promise h2{color:#fff;font-size:clamp(30px,3.8vw,46px);font-weight:800;letter-spacing:-.025em}
+.promise-copy > p{color:#B8C7C0;margin-top:18px;font-size:18px;max-width:44ch}
+.promise-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 32px}
+.promise-list li{display:flex;gap:14px}
+.pr-ic{flex:none;width:46px;height:46px;border-radius:14px;background:rgba(61,219,155,.14);color:#7EE2B8;display:grid;place-items:center}
+.pr-ic .i{width:22px;height:22px}
+.promise-list b{display:block;font-family:var(--font-head);font-size:18px;color:#fff;margin-bottom:4px}
+.promise-list p{color:#B8C7C0;font-size:15.5px;line-height:1.5}
+.comfort{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)}
+.comfort > p{color:#D7E3DD;font-size:16.5px;max-width:58ch}
+.comfort > p b{color:#fff}
+.vote-row{display:flex;flex-wrap:wrap;gap:8px}
+.vote{height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-weight:600;font-size:15px;cursor:pointer}
+.vote:hover{background:rgba(255,255,255,.08)}
+.vote[aria-pressed="true"]{background:#3DDB9B;border-color:#3DDB9B;color:#06140F}
+.vote[disabled]:not([aria-pressed="true"]){opacity:.45;cursor:default}
+.comfort .vote-thanks{flex-basis:100%;color:#7EE2B8;font-weight:600}
+
+/* Text-style buttons that open detail sheets */
+.link-btn{border:0;background:none;padding:0;font:inherit;font-weight:600;color:var(--gold-text);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;cursor:pointer}
+.link-btn:hover{text-decoration-thickness:2.5px}
+.link-btn.sm{font-size:14px}
+.promise .link-btn{color:#7EE2B8;margin-top:22px;font-size:16.5px}
+.section-more{margin-top:36px}
+.cap-left{display:flex;flex-direction:column;gap:4px}
+.phone-col .beta-btn{margin-top:14px}
+
+/* Feature vote under How it works */
+.feature-vote{max-width:900px;margin:56px auto 0;padding:28px clamp(18px,3vw,32px);border-radius:26px;background:var(--surface);border:1px solid var(--line);text-align:center}
+.fv-q{font-family:var(--font-head);font-size:clamp(20px,2.2vw,24px);font-weight:700;margin-bottom:6px}
+.fv-sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+.fv-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.fv{height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);font-weight:600;font-size:15px;cursor:pointer}
+.fv:hover{border-color:var(--gold)}
+.fv[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.fv[disabled]:not([aria-pressed="true"]){opacity:.5;cursor:default}
+.fv-thanks{margin-top:16px;color:var(--gold-text);font-weight:600}
+
+/* Detail sheets (learn-more pages) */
+.sheet{width:min(680px,calc(100% - 32px));max-height:min(86vh,860px);padding:0;border:0;border-radius:26px;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.sheet::backdrop{background:rgba(9,18,15,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.sheet[open]{display:flex;flex-direction:column}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px 14px;border-bottom:1px solid var(--line)}
+.sheet-head h2{font-size:clamp(22px,2.6vw,28px);font-weight:800}
+.sheet-close{flex:none;width:40px;height:40px;border-radius:50%;border:0;background:var(--tile);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.sheet-body{padding:20px 24px 24px;overflow-y:auto}
+.sh-lead{font-size:17.5px;color:var(--ink-2);margin-bottom:18px}
+.sh-steps{margin:0 0 18px;padding:0;list-style:none;counter-reset:sh;display:grid;gap:14px}
+.sh-steps li{counter-increment:sh;display:flex;gap:14px;font-size:15.5px;color:var(--ink-2)}
+.sh-steps li::before{content:counter(sh);flex:none;width:28px;height:28px;border-radius:50%;background:var(--cream);color:var(--safe-text);font-weight:700;font-size:14px;display:grid;place-items:center}
+.sh-steps b{color:var(--ink)}
+.sh-note{font-size:14.5px;color:var(--muted);margin-top:4px}
+.sh-table-wrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--line);border-radius:16px}
+.sh-table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:480px}
+.sh-table th,.sh-table td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.sh-table tr:last-child td{border-bottom:0}
+.sh-table th{font-size:13.5px;color:var(--muted);font-weight:600;background:var(--surface-2)}
+.sh-table td:first-child{font-weight:600;color:var(--ink)}
+.sh-table .yes{color:var(--safe);font-weight:700}
+.sh-table .no{color:var(--muted)}
+.keep-never{color:var(--safe-text);font-weight:600}
+.sh-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sh-actions .btn{height:46px}
+.team-row{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.team-row .fv{height:40px}
+@media (max-width:620px){
+  .sheet{width:100%;max-width:100%;margin:auto 0 0;border-radius:24px 24px 0 0;max-height:90vh}
+}
+
 /* Pricing */
 .billing{display:flex;width:max-content;max-width:100%;margin:0 auto 40px;padding:5px;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
 .billing button{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 20px;border:0;border-radius:999px;background:transparent;font-weight:600;font-size:15px;color:var(--muted);cursor:pointer}
@@ -436,7 +519,9 @@ legend{padding:0}
 .billing button[aria-pressed="true"] .save-tag{background:var(--gold);color:var(--gold-ink)}
 .billing.mini{display:inline-flex;width:auto}
 .billing.mini button{height:32px;padding:0 14px;font-size:13.5px}
-.price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:920px;margin:0 auto}
+.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1120px;margin:0 auto}
+.pc-teams{margin:-12px 0 22px}
+.price-more{text-align:center;margin-top:28px}
 .price-card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:34px 32px 32px}
 .price-card.featured{border:2px solid var(--gold);box-shadow:var(--shadow)}
 .pc-badge{position:absolute;top:-14px;left:28px;background:var(--gold);color:var(--gold-ink);font-size:13px;font-weight:700;border-radius:999px;padding:5px 12px}
@@ -454,14 +539,14 @@ legend{padding:0}
 .price-foot{text-align:center;font-size:14px;color:var(--muted);margin-top:26px}
 
 /* Signup */
-.signup-band{position:relative;overflow:hidden;background:var(--stage);color:#EEF2F8;border-radius:34px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,60px);align-items:start}
+.signup-band{position:relative;overflow:hidden;background:var(--stage);color:#ECF2EF;border-radius:34px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,60px);align-items:start}
 .signup-band::before{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-200px;border-radius:50%;border:1.5px solid rgba(255,255,255,.08);box-shadow:0 0 0 70px rgba(255,255,255,.025)}
 .signup-copy{position:relative}
 .signup-copy h2{color:#fff}
-.signup-copy > p{color:#B9C4D6;margin-top:18px;font-size:18px;max-width:42ch}
+.signup-copy > p{color:#B8C7C0;margin-top:18px;font-size:18px;max-width:42ch}
 .perks{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:16px}
-.perks li{display:flex;gap:14px;align-items:flex-start;color:#C9D3E2;font-size:16px}
-.perks .tick{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center;margin-top:1px}
+.perks li{display:flex;gap:14px;align-items:flex-start;color:#CFDAD4;font-size:16px}
+.perks .tick{flex:none;width:28px;height:28px;border-radius:50%;background:var(--live);color:#06140F;display:grid;place-items:center;margin-top:1px}
 .perks .tick .i{width:16px;height:16px;stroke-width:3}
 .perks b{color:#fff}
 .form-card{position:relative;background:var(--surface);color:var(--ink);border-radius:24px;padding:clamp(20px,3vw,30px);box-shadow:0 24px 60px rgba(0,0,0,.3)}
@@ -483,7 +568,7 @@ legend{padding:0}
 .lbl{display:block;font-size:14.5px;font-weight:600;margin-bottom:8px}
 .lbl em{font-style:normal;font-weight:500;color:var(--muted);font-size:13px;margin-left:4px}
 .input{width:100%;height:50px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);padding:0 14px;font-size:16px}
-.input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,176,49,.3)}
+.input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(31,181,126,.3)}
 select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237A8AA2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -534,7 +619,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 .gt{color:var(--gt-text);font-weight:600}
 
 /* Keyframes */
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(245,176,49,.55)}80%,100%{box-shadow:0 0 0 10px rgba(245,176,49,0)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(31,181,126,.55)}80%,100%{box-shadow:0 0 0 10px rgba(31,181,126,0)}}
 @keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @keyframes blink{to{visibility:hidden}}
 @keyframes scan{0%{transform:translateY(0);opacity:0}15%,80%{opacity:.9}100%{transform:translateY(32px);opacity:0}}
@@ -578,7 +663,6 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 }
 @media (max-width:900px){
   .hero-top{grid-template-columns:minmax(0,1fr);align-items:start}
-  .price-grid{grid-template-columns:minmax(0,1fr);max-width:520px}
 }
 @media (max-width:520px){
   .device-cap{flex-direction:column;align-items:flex-start}
@@ -588,6 +672,14 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 32px;max-width:780px;margin-inline:auto}
   .track{display:none}
   .num{box-shadow:none}
+}
+@media (max-width:1020px){
+  .price-grid{grid-template-columns:minmax(0,1fr);max-width:520px}
+  .promise-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:620px){
+  .ec-wave b:nth-child(n+41){display:none}
+  .promise-list,.hero-side .hero-privacy .trust{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -602,12 +694,13 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 <!-- Logo symbol, reused across the page -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo" viewBox="0 0 40 40">
-    <rect width="40" height="40" rx="10" fill="#F5B031"/>
-    <rect x="17" y="6.5" width="6" height="6.5" rx="1.5" fill="#0F1A2E"/>
-    <rect x="12" y="11" width="16" height="21" rx="3.2" fill="#0F1A2E"/>
-    <rect x="18.6" y="8.4" width="2.8" height="1.6" rx=".8" fill="#F5B031"/>
-    <circle cx="20" cy="18.2" r="3" fill="#F5B031"/>
-    <path d="M15.4 26.6c0-2.6 2-4.3 4.6-4.3s4.6 1.7 4.6 4.3z" fill="#F5B031"/>
+    <rect width="40" height="40" rx="11" fill="#0F6E56"/>
+    <rect x="17" y="6.5" width="6" height="6.5" rx="1.5" fill="#FFFFFF"/>
+    <rect x="12" y="11" width="16" height="21" rx="3.2" fill="#FFFFFF"/>
+    <rect x="18.6" y="8.4" width="2.8" height="1.6" rx=".8" fill="#0F6E56"/>
+    <circle cx="20" cy="18.2" r="3" fill="#0F6E56"/>
+    <path d="M15.4 26.6c0-2.6 2-4.3 4.6-4.3s4.6 1.7 4.6 4.3z" fill="#0F6E56"/>
+    <path d="M31 14.5a7 7 0 0 1 0 11" fill="none" stroke="#7EE2B8" stroke-width="2.2" stroke-linecap="round"/>
   </symbol>
 </svg>
 
@@ -618,7 +711,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       <ul class="nav-links">
         <li><a href="#how">How it works</a></li>
         <!-- <li><a href="#demo">Demo</a></li> -->
-        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#promise">Privacy</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -650,11 +743,18 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
           Watch the demo
         </a> -->
       </div>
-      <ul class="trust">
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>No facial recognition</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Their voice is never saved</li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>You review before anything is sent</li>
-      </ul>
+      <div class="hero-privacy">
+        <span class="hp-ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div>
+          <b>Private by default. Nothing is recorded.</b>
+          <ul class="trust">
+            <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>No facial recognition</li>
+            <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Their voice is never saved</li>
+            <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Nothing kept unless you keep it</li>
+            <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>You review before anything is sent</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -665,7 +765,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         <svg class="gsvg" viewBox="0 0 800 360" role="img" aria-label="View through Meta AI glasses at a career fair: a person wearing a name badge, with a short spoken brief playing through the speaker in the right temple">
           <defs>
             <clipPath id="lens-clip"><rect x="52" y="40" width="316" height="280" rx="80"/><rect x="432" y="40" width="316" height="280" rx="80"/></clipPath>
-            <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9EEF5"/><stop offset="1" stop-color="#CAD4E1"/></linearGradient>
+            <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF2EF"/><stop offset="1" stop-color="#CBD6D0"/></linearGradient>
             <linearGradient id="g-sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
             <filter id="f-blur6"><feGaussianBlur stdDeviation="6"/></filter>
             <filter id="f-blur2"><feGaussianBlur stdDeviation="1.6"/></filter>
@@ -674,30 +774,30 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
             <rect width="800" height="360" fill="url(#g-wall)"/>
             <g filter="url(#f-blur6)" fill="#fff" opacity=".9"><circle cx="120" cy="40" r="22"/><circle cx="300" cy="32" r="18"/><circle cx="520" cy="40" r="20"/><circle cx="700" cy="32" r="24"/></g>
             <g filter="url(#f-blur2)">
-              <rect x="74" y="66" width="280" height="160" rx="6" fill="#1E3A5F"/>
-              <rect x="74" y="66" width="280" height="10" fill="#F5B031"/>
-              <text id="booth-name" x="90" y="104" text-anchor="start" font-family="Poppins, Inter, sans-serif" font-weight="700" font-size="16" fill="#fff" opacity=".9">Northstar Labs</text>
-              <rect x="466" y="86" width="260" height="140" rx="6" fill="#B9C5D6"/>
-              <rect x="466" y="86" width="260" height="8" fill="#8EA0B8"/>
-              <g fill="#97A6BC"><circle cx="520" cy="182" r="13"/><path d="M496 250c0-30 10-46 24-46s24 16 24 46z"/><circle cx="680" cy="176" r="14"/><path d="M654 250c0-32 12-50 26-50s26 18 26 50z"/></g>
+              <rect x="74" y="66" width="280" height="160" rx="6" fill="#1D3A33"/>
+              <rect x="74" y="66" width="280" height="10" fill="#1FB57E"/>
+              <text id="booth-name" x="90" y="104" text-anchor="start" font-family="Bricolage Grotesque, Inter, sans-serif" font-weight="700" font-size="16" fill="#fff" opacity=".9">Northstar Labs</text>
+              <rect x="466" y="86" width="260" height="140" rx="6" fill="#C3CFC8"/>
+              <rect x="466" y="86" width="260" height="8" fill="#9DB0A6"/>
+              <g fill="#9CABA4"><circle cx="520" cy="182" r="13"/><path d="M496 250c0-30 10-46 24-46s24 16 24 46z"/><circle cx="680" cy="176" r="14"/><path d="M654 250c0-32 12-50 26-50s26 18 26 50z"/></g>
             </g>
-            <rect x="0" y="246" width="800" height="114" fill="#AEB9C9"/>
+            <rect x="0" y="246" width="800" height="114" fill="#B3BFB8"/>
             <g>
               <path id="suit" d="M138 360c0-110 46-184 112-184s112 74 112 184z" fill="#2E3F5F"/>
-              <path d="M232 176l18 34 18-34z" fill="#F5F7FA"/>
+              <path d="M232 176l18 34 18-34z" fill="#F2F4F1"/>
               <rect x="238" y="146" width="24" height="32" rx="8" fill="#8E9AAE"/>
               <circle cx="250" cy="116" r="36" fill="#8E9AAE"/>
               <path d="M214 110c2-24 17-38 36-38s34 14 36 38c-8-11-21-17-36-17s-28 6-36 17z" fill="#56647D"/>
-              <path d="M228 182l14 44M272 182l-14 44" stroke="#F5B031" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M228 182l14 44M272 182l-14 44" stroke="#1FB57E" stroke-width="5" stroke-linecap="round" fill="none"/>
               <rect x="212" y="224" width="76" height="60" rx="6" fill="#fff" stroke="#CBD5E1"/>
-              <path d="M212 239v-9a6 6 0 0 1 6-6h64a6 6 0 0 1 6 6v9z" fill="#1E3A5F"/>
+              <path d="M212 239v-9a6 6 0 0 1 6-6h64a6 6 0 0 1 6 6v9z" fill="#1D3A33"/>
               <text x="250" y="235" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#fff" letter-spacing=".8">HELLO</text>
-              <text id="badge-name" x="250" y="259" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#0F1A2E">Quang Nguyen</text>
+              <text id="badge-name" x="250" y="259" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#11201B">Quang Nguyen</text>
               <text id="badge-org" x="250" y="273" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#5B6B82">Northstar Labs</text>
             </g>
             <g class="reticle">
-              <path d="M202 230v-14h14M298 230v-14h-14M202 280v14h14M298 280v14h-14" stroke="#F5B031" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect class="reticle-line" x="206" y="220" width="88" height="2.5" rx="1.25" fill="#F5B031"/>
+              <path d="M202 230v-14h14M298 230v-14h-14M202 280v14h14M298 280v14h-14" stroke="#1FB57E" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect class="reticle-line" x="206" y="220" width="88" height="2.5" rx="1.25" fill="#1FB57E"/>
             </g>
             <rect width="800" height="360" fill="url(#g-sheen)"/>
           </g>
@@ -708,10 +808,10 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
           </g>
           <rect class="frame-solid" x="4" y="72" width="44" height="20" rx="6"/>
           <rect class="frame-solid" x="752" y="72" width="44" height="20" rx="6"/>
-          <circle cx="72" cy="56" r="5" fill="#3A4864"/>
+          <circle cx="72" cy="56" r="5" fill="#3B4943"/>
           <circle class="led" cx="728" cy="56" r="4.5"/>
-          <circle class="spk" cx="786" cy="82" r="3.5" fill="#F5B031"/>
-          <g fill="none" stroke="#F5B031" stroke-width="3.5" stroke-linecap="round">
+          <circle class="spk" cx="786" cy="82" r="3.5" fill="#1FB57E"/>
+          <g fill="none" stroke="#1FB57E" stroke-width="3.5" stroke-linecap="round">
             <path class="gw" d="M770 100a8 8 0 0 0 16 0"/>
             <path class="gw" d="M763 100a15 15 0 0 0 30 0"/>
             <path class="gw" d="M756 100a22 22 0 0 0 44 0"/>
@@ -730,7 +830,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         <p class="ec-text" id="ec-text" aria-live="polite"></p>
       </div>
       <figcaption class="device-cap">
-        <span class="cap-title"><span class="rdot"></span>In your ear: Live lookup</span>
+        <div class="cap-left"><span class="cap-title"><span class="rdot"></span>In your ear: Live lookup</span><button class="link-btn sm" type="button" data-sheet="lookup" data-from="hero_glasses">How does it find this?</button></div>
         <div class="look-at" role="group" aria-label="Choose who to look at">
           <span>Look at</span>
           <button type="button" aria-pressed="true" data-person="0">Quang</button>
@@ -878,7 +978,34 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       </div>
       <span class="cap-title">On your phone: recall and follow-up</span>
       <p class="cap-hint">Open a contact, browse Events, or edit a draft.</p>
+      <button class="btn btn-ghost btn-sm beta-btn" type="button" data-sheet="beta" data-from="hero_phone">Get the beta app</button>
       <p class="sr-only" id="sr-status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRIVACY PROMISE ================= -->
+<section class="promise" id="promise" aria-labelledby="promise-title">
+  <div class="wrap promise-grid">
+    <div class="promise-copy">
+      <h2 id="promise-title">Nothing is recorded. Nothing is kept unless you choose to keep it.</h2>
+      <p>Network&amp;Recall never stores audio, video, or face data. Conversations become a short text summary on your phone, and the audio is discarded right away.</p>
+      <button class="link-btn" type="button" data-sheet="privacy" data-from="promise">See exactly what's kept, and for how long</button>
+    </div>
+    <ul class="promise-list">
+      <li><span class="pr-ic"><svg class="i" viewBox="0 0 24 24"><path d="M2 2l20 20"/><path d="M9 9v3a3 3 0 0 0 5.1 2.1M15 9.3V5a3 3 0 0 0-5.9-.7"/><path d="M19 10v2a7 7 0 0 1-.6 2.9M5 10v2a7 7 0 0 0 11.5 5.4M12 19v3"/></svg></span><div><b>No recordings</b><p>Audio is turned into text and discarded right away. It's never stored.</p></div></li>
+      <li><span class="pr-ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M3 3l18 18"/></svg></span><div><b>No facial recognition</b><p>Live lookup starts from the name on a badge, never a face. No photos or video are kept.</p></div></li>
+      <li><span class="pr-ic"><svg class="i" viewBox="0 0 24 24"><path d="M2 10v4M6 7v10M10 4v16M14 8v8M18 6v12M22 10v4"/><path d="M3 3l18 18"/></svg></span><div><b>Briefs aren't saved</b><p>What you hear in your ear disappears. Only contacts you choose to keep are stored.</p></div></li>
+      <li><span class="pr-ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></span><div><b>You hold the delete key</b><p>Delete a contact or a whole event and it's gone. Anyone can opt out of lookups.</p></div></li>
+    </ul>
+    <div class="comfort" role="group" aria-labelledby="comfort-q">
+      <p id="comfort-q"><b>Quick question:</b> if someone used Network&amp;Recall while talking to you, would you be okay with it?</p>
+      <div class="vote-row">
+        <button class="vote" type="button" aria-pressed="false" data-comfort="yes">Yes</button>
+        <button class="vote" type="button" aria-pressed="false" data-comfort="if_told">Only if they tell me</button>
+        <button class="vote" type="button" aria-pressed="false" data-comfort="no">No</button>
+      </div>
+      <p class="vote-thanks" hidden>Thanks. Answers like yours shape how the glasses ask for consent.</p>
     </div>
   </div>
 </section>
@@ -995,7 +1122,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
             <path class="ew" d="M212 9a24 24 0 0 1 0 40"/>
             <path class="f-paper st-ink" stroke-width="3.5" stroke-linejoin="round" d="M42 92H162L184 70L180 92H198a12 12 0 0 1 12 12V154a12 12 0 0 1-12 12H42a12 12 0 0 1-12-12V104a12 12 0 0 1 12-12Z"/>
             <circle class="f-gold" cx="54" cy="115" r="11"/>
-            <path d="M48.5 112h3l4-3.5v13l-4-3.5h-3z" fill="#0F1A2E"/>
+            <path d="M48.5 112h3l4-3.5v13l-4-3.5h-3z" fill="#11201B"/>
             <rect class="f-ink" x="74" y="108" width="80" height="6.5" rx="3.25"/>
             <rect class="f-muted" x="74" y="120" width="112" height="5" rx="2.5"/>
             <rect class="f-muted" x="74" y="130" width="92" height="5" rx="2.5"/>
@@ -1070,7 +1197,19 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         <p class="tagline">Export to a spreadsheet.</p>
       </article>
     </div>
-    <p class="hint">Select a step to see it in action.</p>
+    <p class="hint">Select a step to see it in action. <button class="link-btn sm" type="button" data-sheet="lookup" data-from="how">How does Live lookup find this?</button></p>
+    <div class="feature-vote" role="group" aria-labelledby="fv-q">
+      <p class="fv-q" id="fv-q">Which part would you actually pay for?</p>
+      <p class="fv-sub">Pick the one that matters most to you.</p>
+      <div class="fv-row">
+        <button class="fv" type="button" aria-pressed="false" data-feature="spoken_lookup">Spoken badge lookup</button>
+        <button class="fv" type="button" aria-pressed="false" data-feature="summaries">Conversation summaries</button>
+        <button class="fv" type="button" aria-pressed="false" data-feature="drafts">Follow-up drafts</button>
+        <button class="fv" type="button" aria-pressed="false" data-feature="export">Contact export</button>
+        <button class="fv" type="button" aria-pressed="false" data-feature="none">None of these</button>
+      </div>
+      <p class="fv-thanks" hidden>Thanks, noted. These answers decide what we build first.</p>
+    </div>
   </div>
 </section>
 
@@ -1140,6 +1279,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         </li>
       </ul>
     </div>
+    <p class="section-more"><button class="link-btn" type="button" data-sheet="privacy" data-from="privacy_section">Read the full privacy breakdown</button></p>
   </div>
 </section>
 
@@ -1179,7 +1319,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 <section class="section alt" id="pricing">
   <div class="wrap">
     <div class="head center">
-      <h2>Simple pricing, with a student discount.</h2>
+      <h2>Start free. Students and researchers pay less.</h2>
       <p>Pre-order to lock in founding-member pricing. No payment is collected until launch.</p>
     </div>
     <div class="billing" role="group" aria-label="Billing period">
@@ -1187,6 +1327,19 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       <button type="button" aria-pressed="false" data-billing="yearly">Yearly<span class="save-tag" id="save-max">Save more</span></button>
     </div>
     <div class="price-grid">
+      <article class="price-card">
+        <h3>Free</h3>
+        <p class="pc-for">Try it at your next event</p>
+        <div class="pc-price"><span class="pc-amt" data-amt="free"></span><span class="pc-unit" data-unit="free"></span></div>
+        <p class="pc-note" data-note="free"></p>
+        <ul class="pc-feats">
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Quick recap after each conversation</li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Follow-up drafts</li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Up to 3 events and 25 contacts</li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Spreadsheet export</li>
+        </ul>
+        <a class="btn btn-ghost" href="#signup" data-preorder="free">Join free at launch</a>
+      </article>
       <article class="price-card featured">
         <span class="pc-badge">Student and researcher discount</span>
         <h3>Student &amp; Researcher</h3>
@@ -1194,10 +1347,10 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
         <div class="pc-price"><s class="pc-was" data-was="student"></s><span class="pc-amt" data-amt="student"></span><span class="pc-unit" data-unit="student"></span></div>
         <p class="pc-note" data-note="student"></p>
         <ul class="pc-feats">
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Everything in Free</li>
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Spoken briefs on name badges</li>
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Unlimited events and contacts</li>
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Conversation summaries and follow-up drafts</li>
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Spreadsheet export</li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Unlimited events and contacts</li>
         </ul>
         <a class="btn btn-primary" href="#signup" data-preorder="student">Pre-order Student &amp; Researcher</a>
       </article>
@@ -1212,9 +1365,11 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>CRM-ready export</li>
           <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Shared event lists for teams</li>
         </ul>
+        <p class="pc-teams"><button class="link-btn sm" type="button" data-sheet="teams" data-from="pricing_pro">Buying for a lab or team?</button></p>
         <a class="btn btn-ghost" href="#signup" data-preorder="pro">Pre-order Professional</a>
       </article>
     </div>
+    <div class="price-more"><button class="link-btn" type="button" data-sheet="plans" data-from="pricing">Compare all features</button></div>
     <p class="price-foot">Student and researcher pricing needs a .edu or institutional email.</p>
   </div>
 </section>
@@ -1364,6 +1519,95 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 </section>
 </main>
 
+<!-- ================= DETAIL SHEETS (learn-more pages, tracked as discovery clicks) ================= -->
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-head">
+    <h2 id="sheet-title">Details</h2>
+    <button class="sheet-close" type="button" id="sheet-close" aria-label="Close"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="sheet-body" id="sheet-body"></div>
+</dialog>
+
+<template id="tpl-lookup" data-title="How Live lookup works">
+  <p class="sh-lead">Live lookup turns the name on a badge into a 10-second brief you hear through the glasses' open-ear speakers.</p>
+  <ol class="sh-steps">
+    <li><span><b>Read the badge.</b> The glasses read the printed name and organization on the badge you look at. Faces are never analyzed.</span></li>
+    <li><span><b>Check public sources.</b> It looks for public professional info only: company and lab pages, publication listings, and public profiles.</span></li>
+    <li><span><b>Speak a short brief.</b> Their role, what they work on, and one thing you have in common, at a low volume meant for you.</span></li>
+    <li><span><b>Forget it.</b> The brief isn't saved. If you keep the contact, only the name, organization, and your notes are stored on your phone.</span></li>
+  </ol>
+  <p class="sh-note">Anyone can opt out of appearing in lookups, and you can turn Live lookup off in the app.</p>
+  <div class="sh-actions">
+    <a class="btn btn-primary" href="#signup" data-sheet-cta="join" data-intent="waitlist">Join the waitlist</a>
+    <a class="btn btn-ghost" href="#pricing" data-sheet-cta="pricing">See pricing</a>
+  </div>
+</template>
+
+<template id="tpl-privacy" data-title="What's kept, and for how long">
+  <p class="sh-lead">Here is every kind of data Network&amp;Recall touches. These are the commitments the product is designed around.</p>
+  <div class="sh-table-wrap"><table class="sh-table">
+    <thead><tr><th scope="col">Data</th><th scope="col">What happens to it</th><th scope="col">Kept for</th></tr></thead>
+    <tbody>
+      <tr><td>Conversation audio</td><td>Turned into a text summary as you talk, then discarded</td><td class="keep-never">Never stored</td></tr>
+      <tr><td>Video and photos</td><td>Not captured by Network&amp;Recall</td><td class="keep-never">Never stored</td></tr>
+      <tr><td>Faces</td><td>Not analyzed or recognized</td><td class="keep-never">Never stored</td></tr>
+      <tr><td>Spoken briefs</td><td>Played once in your ear</td><td class="keep-never">Never stored</td></tr>
+      <tr><td>Name badge text</td><td>Read to find the name and organization</td><td>Only if you keep the contact</td></tr>
+      <tr><td>Contacts, summaries, drafts</td><td>Saved on your phone for you to review</td><td>Until you delete them</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sh-note">Nothing is sent to anyone until you review it. Export or delete any event at any time.</p>
+  <div class="sh-actions">
+    <a class="btn btn-primary" href="#signup" data-sheet-cta="join" data-intent="waitlist">Join the waitlist</a>
+  </div>
+</template>
+
+<template id="tpl-plans" data-title="Compare plans">
+  <div class="sh-table-wrap"><table class="sh-table">
+    <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Student &amp; Researcher</th><th scope="col">Professional</th></tr></thead>
+    <tbody>
+      <tr><td>Price</td><td><span data-amt="free"></span><span data-unit="free"></span></td><td><span data-amt="student"></span><span data-unit="student"></span></td><td><span data-amt="pro"></span><span data-unit="pro"></span></td></tr>
+      <tr><td>Quick recap after each chat</td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>Follow-up drafts</td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>Spreadsheet export</td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>Events and contacts</td><td>3 events, 25 contacts</td><td>Unlimited</td><td>Unlimited</td></tr>
+      <tr><td>Spoken briefs on name badges</td><td><span class="no">Not included</span></td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>Live conversation summaries</td><td><span class="no">Not included</span></td><td><span class="yes">Included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>Custom follow-up templates</td><td><span class="no">Not included</span></td><td><span class="no">Not included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>CRM-ready export</td><td><span class="no">Not included</span></td><td><span class="no">Not included</span></td><td><span class="yes">Included</span></td></tr>
+      <tr><td>Shared event lists for teams</td><td><span class="no">Not included</span></td><td><span class="no">Not included</span></td><td><span class="yes">Included</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sh-note">Student and researcher pricing needs a .edu or institutional email.</p>
+  <div class="sh-actions">
+    <a class="btn btn-primary" href="#signup" data-sheet-cta="preorder_student" data-plan="student">Pre-order Student &amp; Researcher</a>
+    <a class="btn btn-ghost" href="#signup" data-sheet-cta="join_free" data-plan="free">Join free at launch</a>
+  </div>
+</template>
+
+<template id="tpl-beta" data-title="The beta app isn't out yet">
+  <p class="sh-lead">Thanks for trying to get it. We're inviting the first testers soon, starting with people who own Meta AI glasses.</p>
+  <p class="sh-note">Join the waitlist and tell us which glasses you have. We'll email your invite when the beta opens.</p>
+  <div class="sh-actions">
+    <a class="btn btn-primary" href="#signup" data-sheet-cta="join" data-intent="waitlist">Join the waitlist</a>
+  </div>
+</template>
+
+<template id="tpl-teams" data-title="Network&amp;Recall for labs and teams">
+  <p class="sh-lead">Shared event lists let a lab or team pool the contacts everyone made at the same conference, under one bill.</p>
+  <p class="fv-q" style="font-size:18px">How many people would use it?</p>
+  <div class="team-row">
+    <button class="fv" type="button" aria-pressed="false" data-team="2-5">2 to 5</button>
+    <button class="fv" type="button" aria-pressed="false" data-team="6-20">6 to 20</button>
+    <button class="fv" type="button" aria-pressed="false" data-team="21+">21 or more</button>
+  </div>
+  <p class="fv-thanks" hidden>Thanks, noted. We'll include team pricing in your launch email.</p>
+  <div class="sh-actions">
+    <a class="btn btn-primary" href="#signup" data-sheet-cta="preorder_pro" data-plan="pro">Pre-order Professional</a>
+  </div>
+</template>
+
+
 <footer class="footer">
   <div class="wrap foot-inner">
     <div>
@@ -1390,8 +1634,9 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 
     // Founding-member prices in USD. Student & Researcher is discounted from the Professional price.
     PRICING: {
-      student: { monthly: 10, yearly: 100 },
-      pro: { monthly: 25, yearly: 250 },
+      free: { monthly: 0, yearly: 0 },
+      student: { monthly: 15, yearly: 150 },
+      pro: { monthly: 29, yearly: 290 },
     },
     // Set to false to hide all prices (for example while running the pricing survey, to avoid anchoring).
     SHOW_PRICES: true,
@@ -1884,7 +2129,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     const io = new IntersectionObserver((entries) => entries.forEach((e) => {
       if (e.isIntersecting && !seen.has(e.target.id)) { seen.add(e.target.id); track("view_" + e.target.id); }
     }), { threshold: 0.3 });
-    ["demo", "how", "signup"].forEach((id) => $(id) && io.observe($(id)));
+    ["promise", "demo", "how", "privacy", "pricing", "signup", "faq"].forEach((id) => $(id) && io.observe($(id)));
   }
 
   /* ---------- Sign-up ---------- */
@@ -1892,7 +2137,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   const intentBtns = [...document.querySelectorAll("[data-intent-tab]")];
   const plansEl = $("plans"), submitBtn = $("submit-btn"), submitLabel = $("submit-label");
   const fine = $("fine"), statusEl = $("form-status");
-  let intent = "waitlist", lastEmail = "";
+  let intent = "waitlist", lastEmail = "", freeInterest = false;
 
 
   const copy = {
@@ -1910,7 +2155,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     setIntent(b.dataset.intentTab);
     track("intent_toggle", { intent: b.dataset.intentTab });
   }));
-  document.querySelectorAll("a[data-intent]").forEach((a) => a.addEventListener("click", () => setIntent(a.dataset.intent)));
+  document.querySelectorAll("a[data-intent]").forEach((a) => a.addEventListener("click", () => { freeInterest = false; setIntent(a.dataset.intent); }));
 
   /* ---------- Pricing: monthly / yearly, with a student & researcher discount ---------- */
   const PR = CONFIG.PRICING;
@@ -1921,28 +2166,38 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   function renderPrices() {
     const unit = billing === "monthly" ? "/month" : "/year";
     document.querySelectorAll("[data-billing]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.billing === billing ? "true" : "false"));
-    ["student", "pro"].forEach((plan) => {
-      document.querySelectorAll(`[data-amt="${plan}"]`).forEach((el) => { el.textContent = CONFIG.SHOW_PRICES ? money(PR[plan][billing]) : "Founding discount"; });
-      document.querySelectorAll(`[data-unit="${plan}"]`).forEach((el) => { el.textContent = CONFIG.SHOW_PRICES ? unit : ""; });
+    ["free", "student", "pro"].forEach((plan) => {
+      const free = plan === "free";
+      document.querySelectorAll(`[data-amt="${plan}"]`).forEach((el) => { el.textContent = free ? "$0" : CONFIG.SHOW_PRICES ? money(PR[plan][billing]) : "Founding discount"; });
+      document.querySelectorAll(`[data-unit="${plan}"]`).forEach((el) => { el.textContent = free || !CONFIG.SHOW_PRICES ? "" : unit; });
     });
     document.querySelectorAll('[data-was="student"]').forEach((el) => { el.textContent = CONFIG.SHOW_PRICES ? money(PR.pro[billing]) : ""; });
     const s = PR.student, p = PR.pro;
     const notes = billing === "monthly"
-      ? { student: `${pctOff(s.monthly, p.monthly)}% off the standard ${money(p.monthly)}/month.`, pro: "Billed monthly. Cancel anytime." }
-      : { student: `Works out to ${money(s.yearly / 12)}/month, billed yearly. ${pctOff(s.yearly, p.yearly)}% off the standard price.`,
+      ? { free: "Free forever. No card needed.", student: `${pctOff(s.monthly, p.monthly)}% off the standard ${money(p.monthly)}/month.`, pro: "Billed monthly. Cancel anytime." }
+      : { free: "Free forever. No card needed.", student: `Works out to ${money(s.yearly / 12)}/month, billed yearly. ${pctOff(s.yearly, p.yearly)}% off the standard price.`,
           pro: `Works out to ${money(p.yearly / 12)}/month, billed yearly. Save ${pctOff(p.yearly, p.monthly * 12)}% vs. monthly.` };
     document.querySelectorAll("[data-note]").forEach((el) => { el.textContent = notes[el.dataset.note]; });
   }
-  $("save-max").textContent = `Save up to ${Math.max(pctOff(PR.student.yearly, PR.student.monthly * 12), pctOff(PR.pro.yearly, PR.pro.monthly * 12))}%`;
+  {
+    const a = pctOff(PR.student.yearly, PR.student.monthly * 12), b = pctOff(PR.pro.yearly, PR.pro.monthly * 12);
+    $("save-max").textContent = a === b ? `Save ${a}%` : `Save up to ${Math.max(a, b)}%`;
+  }
   document.querySelectorAll("[data-billing]").forEach((b) => b.addEventListener("click", () => {
     billing = b.dataset.billing;
     renderPrices();
     track("billing_toggle", { billing });
   }));
-  document.querySelectorAll("[data-preorder]").forEach((a) => a.addEventListener("click", () => {
+  // Picking a plan: Free joins the waitlist (recorded as plan "free"); paid plans open the pre-order form.
+  function choosePlan(plan) {
+    if (plan === "free") { setIntent("waitlist"); freeInterest = true; return; }
+    freeInterest = false;
     setIntent("preorder");
-    const radio = form.querySelector(`input[name="plan"][value="${a.dataset.preorder}"]`);
+    const radio = form.querySelector(`input[name="plan"][value="${plan}"]`);
     if (radio) radio.checked = true;
+  }
+  document.querySelectorAll("[data-preorder]").forEach((a) => a.addEventListener("click", () => {
+    choosePlan(a.dataset.preorder);
     track("pricing_cta", { plan: a.dataset.preorder, billing });
   }));
   if (!CONFIG.SHOW_PRICES) {
@@ -1983,7 +2238,7 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     const data = {
       type: "signup",
       intent,
-      plan: intent === "preorder" ? String(fd.get("plan") || "") : "",
+      plan: intent === "preorder" ? String(fd.get("plan") || "") : (freeInterest ? "free" : ""),
       billing: intent === "preorder" ? billing : "",
       price: intent === "preorder" ? priceLabel(String(fd.get("plan") || "student")) : "",
       email: String(fd.get("email") || "").trim(),
@@ -2052,6 +2307,57 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       btn.disabled = false; btn.textContent = "Send answers";
     }
   });
+
+
+  /* ---------- Discovery test: learn-more sheets, votes, fake doors ---------- */
+  const sheet = $("sheet"), sheetBody = $("sheet-body");
+  let sheetTopic = "";
+  function openSheet(topic, from) {
+    const tpl = $("tpl-" + topic);
+    if (!tpl || typeof sheet.showModal !== "function") return;
+    sheetTopic = topic;
+    $("sheet-title").textContent = tpl.dataset.title;
+    sheetBody.replaceChildren(tpl.content.cloneNode(true));
+    renderPrices();
+    sheet.showModal();
+    sheetBody.scrollTop = 0;
+    track("learn_more_open", { topic, from: from || "" });
+    if (topic === "beta") track("beta_click", { from: from || "" });
+  }
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-sheet]");
+    if (t) { e.preventDefault(); openSheet(t.dataset.sheet, t.dataset.from); }
+  });
+  $("sheet-close").addEventListener("click", () => sheet.close());
+  sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.close(); }); // backdrop
+  sheetBody.addEventListener("click", (e) => {
+    const team = e.target.closest("[data-team]");
+    if (team) {
+      sheetBody.querySelectorAll("[data-team]").forEach((b) => { b.setAttribute("aria-pressed", b === team ? "true" : "false"); b.disabled = true; });
+      sheetBody.querySelector(".fv-thanks").hidden = false;
+      track("team_interest", { size: team.dataset.team });
+      return;
+    }
+    const cta = e.target.closest("[data-sheet-cta]");
+    if (!cta) return;
+    if (cta.dataset.plan) choosePlan(cta.dataset.plan);
+    else if (cta.dataset.intent) { freeInterest = false; setIntent(cta.dataset.intent); }
+    track("sheet_cta", { topic: sheetTopic, cta: cta.dataset.sheetCta });
+    sheet.close();
+  });
+
+  // One-tap polls: answer once per visit
+  function wirePoll(selector, attr, eventName, param) {
+    const btns = [...document.querySelectorAll(selector)];
+    btns.forEach((b) => b.addEventListener("click", () => {
+      btns.forEach((o) => { o.setAttribute("aria-pressed", o === b ? "true" : "false"); o.disabled = true; });
+      const thanks = b.closest("[role=group]").querySelector(".vote-thanks, .fv-thanks");
+      if (thanks) thanks.hidden = false;
+      track(eventName, { [param]: b.dataset[attr] });
+    }));
+  }
+  wirePoll("[data-comfort]", "comfort", "comfort_vote", "answer");
+  wirePoll("[data-feature]", "feature", "feature_vote", "feature");
 
   /* ---------- FAQ + footer ---------- */
   document.querySelectorAll(".faq details").forEach((d, i) =>
