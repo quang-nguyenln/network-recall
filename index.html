@@ -347,19 +347,25 @@ legend{padding:0}
 /* Demo video */
 .video-frame{position:relative;aspect-ratio:16/9;border-radius:28px;overflow:hidden;background:var(--stage);box-shadow:var(--shadow)}
 .video-frame iframe,.video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
-.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,3vw,30px);color:#ECF2EF;
-  background:radial-gradient(55% 65% at 50% 46%,rgba(31,181,126,.20),transparent 70%),radial-gradient(circle at 1px 1px,rgba(255,255,255,.07) 1px,transparent 0) 0 0/22px 22px,var(--stage)}
-.ph-top{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:#B8C7C0}
-.rec{display:inline-flex;align-items:center;gap:8px}
-.rec i{width:9px;height:9px;border-radius:50%;background:#F0605D;animation:blink 1.4s steps(2,start) infinite}
-.ph-center{display:grid;justify-items:center;text-align:center;gap:10px}
-.play-ring{width:clamp(64px,9vw,92px);height:clamp(64px,9vw,92px);border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center;margin-bottom:12px;box-shadow:0 0 0 12px rgba(31,181,126,.16),0 0 0 26px rgba(31,181,126,.07)}
+.demo-wrap{max-width:980px;margin-inline:auto}
+.demo-wrap.portrait{max-width:420px}
+/* Click-to-play cover: the real player loads only when someone presses play (keeps the page fast) */
+.video-facade{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;color:#fff;font:inherit;
+  background:radial-gradient(55% 65% at 50% 46%,rgba(31,181,126,.22),transparent 70%),radial-gradient(circle at 1px 1px,rgba(255,255,255,.07) 1px,transparent 0) 0 0/22px 22px,var(--stage);
+  background-size:cover,22px 22px,auto;background-position:center}
+.video-facade.has-thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,13,.10) 30%,rgba(8,16,13,.62))}
+.vf-center{position:relative;display:grid;justify-items:center;gap:4px;text-align:center;padding:0 20px}
+.vf-center b{font-family:var(--font-head);font-size:clamp(20px,2.6vw,30px);letter-spacing:-.02em;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.vf-center small{font-size:clamp(13px,1.3vw,15px);color:#D7E3DD;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.vf-len{position:absolute;right:16px;bottom:16px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.62);font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.play-ring{width:clamp(64px,9vw,92px);height:clamp(64px,9vw,92px);border-radius:50%;background:var(--gold);color:var(--gold-ink);display:grid;place-items:center;margin-bottom:14px;box-shadow:0 0 0 12px rgba(31,181,126,.22),0 0 0 26px rgba(31,181,126,.10);transition:transform .2s}
 .play-ring svg{width:38%;height:38%;margin-left:6%}
-.ph-center h3{font-size:clamp(22px,2.8vw,32px);color:#fff}
-.ph-center p{color:#B8C7C0;max-width:44ch;font-size:clamp(14px,1.4vw,17px);margin-bottom:10px}
-.ph-bottom{display:flex;align-items:center;gap:14px;font-size:12px;color:#93A49C;font-variant-numeric:tabular-nums}
-.bar-track{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.14);overflow:hidden}
-.bar-track span{display:block;height:100%;width:16%;background:var(--gold)}
+.video-facade:hover .play-ring,.video-facade:focus-visible .play-ring{transform:scale(1.07)}
+.video-facade:focus-visible{outline:3px solid var(--live);outline-offset:-3px}
+.demo-after{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 20px;margin-top:30px;text-align:center}
+.demo-after p{color:var(--muted);font-size:15px}
+.watch-len{font-weight:500;color:var(--muted);font-size:14px}
+@media (max-width:620px){.video-frame{border-radius:20px}.vf-center small{display:none}}
 
 /* How it works (mirrors the figure) */
 .steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
@@ -647,7 +653,6 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 @media (max-width:620px){
   .hero{padding-top:36px}
   .principles{grid-template-columns:1fr}
-  .video-frame:not(.has-video){aspect-ratio:auto;min-height:400px}
   .plan-grid{grid-template-columns:1fr}
   .vw label{grid-template-columns:1fr}
 }
@@ -709,8 +714,8 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span>Network&amp;Recall</span></a>
     <nav aria-label="Primary">
       <ul class="nav-links">
+        <li><a href="#demo" data-watch="nav">Demo</a></li>
         <li><a href="#how">How it works</a></li>
-        <!-- <li><a href="#demo">Demo</a></li> -->
         <li><a href="#promise">Privacy</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -738,10 +743,10 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
       <p class="lede">Network&amp;Recall is a networking assistant for Meta AI glasses. Glance at a name badge and hear who you're talking to. Talk naturally, then find a summary and a follow-up draft on your phone.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#signup" data-intent="waitlist" data-track="hero_cta">Join the waitlist</a>
-        <!-- <a class="btn btn-ghost" href="#demo" data-track="hero_watch">
+        <a class="btn btn-ghost" href="#demo" data-watch="hero">
           <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor"/></svg>
-          Watch the demo
-        </a> -->
+          Watch the demo<span class="watch-len" data-video-len></span>
+        </a>
       </div>
       <div class="hero-privacy">
         <span class="hp-ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
@@ -984,6 +989,32 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
   </div>
 </section>
 
+<!-- ================= DEMO VIDEO (set CONFIG.VIDEO_URL at the bottom of this file) ================= -->
+<section class="section alt" id="demo" aria-labelledby="demo-title">
+  <div class="wrap">
+    <div class="head center">
+      <h2 id="demo-title">One glance. One conversation. Zero notes.</h2>
+      <p>He hears who she is before he says hello. When he walks away, the follow-up is already drafted.</p>
+    </div>
+    <div class="demo-wrap" id="demo-wrap">
+      <div class="video-frame" id="video-frame">
+        <button class="video-facade" id="video-facade" type="button" aria-label="Play the Network&amp;Recall demo video">
+          <span class="vf-center">
+            <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z" fill="currentColor"/></svg></span>
+            <b>Watch the demo</b>
+            <small>See it happen in a minute.</small>
+          </span>
+          <span class="vf-len" data-video-len hidden></span>
+        </button>
+      </div>
+    </div>
+    <div class="demo-after">
+      <p>Want this at your next career fair or conference?</p>
+      <a class="btn btn-primary" href="#signup" data-intent="waitlist" data-track="demo_cta">Join the waitlist</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PRIVACY PROMISE ================= -->
 <section class="promise" id="promise" aria-labelledby="promise-title">
   <div class="wrap promise-grid">
@@ -1048,28 +1079,6 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     </div>
   </div>
 </section>
-
-<!-- ================= DEMO VIDEO =================
-<section class="section alt" id="demo">
-  <div class="wrap">
-    <div class="head">
-      <h2>Same conversation. Two very different follow-ups.</h2>
-      <p>Watch two attendees work the same conference: one with a notepad, one wearing Network&amp;Recall.</p>
-    </div>
-    <div class="video-frame" id="video-frame">
-      <div class="video-ph">
-        <div class="ph-top"><span class="rec"><i></i>Filming in progress</span><span>Scene 1: the conference</span></div>
-        <div class="ph-center">
-          <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z" fill="currentColor"/></svg></span>
-          <h3>Demo film coming soon</h3>
-          <p>Two attendees. One conversation. Only one of them remembers everything.</p>
-          <a class="btn btn-primary btn-sm" href="#signup" data-intent="waitlist" data-track="video_notify">Email me the film</a>
-        </div>
-        <div class="ph-bottom" aria-hidden="true"><span class="bar-track"><span></span></span><span>0:00 / --:--</span></div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- ================= HOW IT WORKS ================= -->
 <section class="section" id="how">
@@ -1632,8 +1641,13 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
     //   Google Sheets: paste your Apps Script web-app URL ending in /exec (setup below)
     FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycby-ntwk7YnlFY021hp6MqubCLkGmw8spRbPu3194tB9lFOR2uP0yUpDXnzTqADb1ioJvg/exec",
 
-    // Your demo film once it's uploaded: a YouTube or Vimeo link, or a direct .mp4 URL.
-    VIDEO_URL: "",
+    // Your demo film: a YouTube (unlisted is fine) or Vimeo link, or a direct .mp4 URL / repo path like "demo.mp4".
+    // Leave "" to hide the demo section and the Watch buttons.
+    VIDEO_URL: "demo.mp4",
+    VIDEO_LENGTH: "0:49",   // shown on the Watch button and the player cover. "" to hide.
+    VIDEO_POSTER: "demo-poster.jpg",       // optional cover image (e.g. "demo-poster.jpg"). YouTube links use their own thumbnail.
+    VIDEO_CAPTIONS: "",     // optional .vtt captions file for an .mp4 (many visitors watch muted)
+    VIDEO_ASPECT: "16/9",   // use "9/16" if you filmed vertically on a phone
 
     // Founding-member prices in USD. Student & Researcher is discounted from the Professional price.
     PRICING: {
@@ -2111,19 +2125,71 @@ select.input{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:p
 
   /* ---------- Demo video ---------- */
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  if (CONFIG.VIDEO_URL.trim()) {
-    const u = CONFIG.VIDEO_URL.trim();
-    const frame = $("video-frame");
-    const yt = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
-    const vm = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-    let html;
-    if (yt) html = `<iframe src="https://www.youtube-nocookie.com/embed/${yt[1]}?rel=0" title="Network&amp;Recall demo film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    else if (vm) html = `<iframe src="https://player.vimeo.com/video/${vm[1]}" title="Network&amp;Recall demo film" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
-    else html = `<video controls playsinline preload="metadata" src="${esc(u)}"></video>`;
-    frame.innerHTML = html;
-    frame.classList.add("has-video");
-    const v = frame.querySelector("video");
-    if (v) v.addEventListener("play", () => track("video_play"), { once: true });
+  const videoUrl = CONFIG.VIDEO_URL.trim();
+  if (!videoUrl) {
+    // No video yet: hide the section and every link that points at it.
+    $("demo").hidden = true;
+    document.querySelectorAll('a[href="#demo"]').forEach((a) => { (a.closest("li") || a).hidden = true; });
+  } else {
+    const frame = $("video-frame"), facade = $("video-facade");
+    const yt = videoUrl.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
+    const vm = videoUrl.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+
+    // Shape: landscape by default, narrow column for vertical phone footage.
+    const [aw, ah] = CONFIG.VIDEO_ASPECT.split("/").map(Number);
+    if (aw && ah) {
+      frame.style.aspectRatio = `${aw}/${ah}`;
+      $("demo-wrap").classList.toggle("portrait", aw < ah);
+    }
+    // Length label on the hero button and the cover.
+    if (CONFIG.VIDEO_LENGTH) {
+      document.querySelectorAll("[data-video-len]").forEach((el) => {
+        el.textContent = el.classList.contains("watch-len") ? `· ${CONFIG.VIDEO_LENGTH}` : CONFIG.VIDEO_LENGTH;
+        el.hidden = false;
+      });
+    }
+    // Cover image: your poster, else the YouTube thumbnail.
+    const thumb = CONFIG.VIDEO_POSTER.trim() || (yt ? `https://i.ytimg.com/vi/${yt[1]}/hqdefault.jpg` : "");
+    if (thumb) {
+      facade.style.backgroundImage = `url("${thumb.replace(/"/g, "%22")}")`;
+      facade.style.backgroundSize = "cover";
+      facade.classList.add("has-thumb");
+    }
+
+    // The real player is created only on the first play, so it never slows down the page.
+    let started = false;
+    function playVideo(from) {
+      if (started) {
+        const v = frame.querySelector("video");
+        if (v) v.play().catch(() => {});
+        return;
+      }
+      started = true;
+      let html;
+      if (yt) html = `<iframe src="https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="Network&amp;Recall demo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      else if (vm) html = `<iframe src="https://player.vimeo.com/video/${vm[1]}?autoplay=1" title="Network&amp;Recall demo video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+      else {
+        const cap = CONFIG.VIDEO_CAPTIONS.trim() ? `<track kind="captions" srclang="en" label="English" src="${esc(CONFIG.VIDEO_CAPTIONS.trim())}" default>` : "";
+        const poster = CONFIG.VIDEO_POSTER.trim() ? ` poster="${esc(CONFIG.VIDEO_POSTER.trim())}"` : "";
+        html = `<video controls autoplay playsinline preload="auto"${poster} src="${esc(videoUrl)}">${cap}</video>`;
+      }
+      frame.innerHTML = html;
+      const v = frame.querySelector("video");
+      if (v) {
+        v.focus({ preventScroll: true });
+        v.addEventListener("ended", () => track("video_complete"), { once: true });
+      }
+      track("video_play", { from });
+    }
+    facade.addEventListener("click", () => playVideo("player"));
+
+    // "Watch the demo" (hero button, nav link): scroll to the video and start it.
+    document.querySelectorAll("[data-watch]").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      frame.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      track("watch_click", { from: a.dataset.watch });
+      playVideo(a.dataset.watch);
+    }));
   }
 
   // Section views (for a simple funnel: page view > saw demo > saw sign-up > signed up)
